@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".ELearning.ThreeDifferentPages"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="76dp"
         android:id="@+id/Toolbar"
-        android:background="@color/black"
+        android:background="@color/white"
         android:minHeight="?attr/actionBarSize">
     <TextView
         android:id="@+id/PageName"
@@ -27,8 +28,15 @@
         android:textStyle="bold"
         android:fontFamily="@font/semiboldoutfit"
         />
-
     </androidx.appcompat.widget.Toolbar>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/NHFMain"/>
+
+
 
 
 
