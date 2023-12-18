@@ -6,4 +6,12 @@
     </style>
 
     <style name="Theme.WIA2007MAD" parent="Base.Theme.WIA2007MAD" />
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:layout_width">100dp</item> <!-- Fill the width of the menu item -->
+        <item name="android:layout_height">100dp</item> <!-- Fill the height of the menu item -->
+        <item name="shapeAppearance">@id/square</item>
+        <item name="android:color">@color/selected_icon_color</item>
+    </style>
+
+
 </resources>
