@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ELearning.MainPageElearning">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="414dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/semiboldoutfit"
+                android:text="Virtual workshops and webinars"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.285"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:layout_width="34dp"
+                android:layout_height="31dp"
+                android:layout_marginEnd="16dp"
+                android:background="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.695"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalscrollviewworkshop"
+                android:layout_width="368dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="4dp"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/workshopcardview1"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/workshopimage1"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ricardo" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:id="@+id/workshopauthor1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter_light"
+                                    android:hint="Author1"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="11dp" />
+
+                                <TextView
+                                    android:id="@+id/workshoptitle1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:hint="Title1"
+                                    android:paddingEnd="40dp"
+                                    android:textSize="12dp" />
+
+                                <TextView
+                                    android:id="@+id/workshopcontent1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/lorem_ipsum"
+                                    android:paddingEnd="5dp"
+                                    android:textSize="9dp" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/workshopcardview2"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/workshopimage2"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ricardo" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:id="@+id/workshopauthor2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter_light"
+                                    android:hint="Author2"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="11dp" />
+
+                                <TextView
+                                    android:id="@+id/workshoptitle2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:hint="Title2"
+                                    android:paddingEnd="40dp"
+                                    android:textSize="12dp" />
+
+                                <TextView
+                                    android:id="@+id/workshopcontent2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/lorem_ipsum"
+                                    android:paddingEnd="5dp"
+                                    android:textSize="9dp" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/workshopcardview3"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/workshopimage3"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ricardo" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:id="@+id/workshopauthor3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter_light"
+                                    android:hint="Author3"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="11dp" />
+
+                                <TextView
+                                    android:id="@+id/workshoptitle3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:hint="Title3"
+                                    android:paddingEnd="40dp"
+                                    android:textSize="12dp" />
+
+                                <TextView
+                                    android:id="@+id/workshopcontent3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/lorem_ipsum"
+                                    android:paddingEnd="5dp"
+                                    android:textSize="9dp" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:fontFamily="@font/semiboldoutfit"
+                android:text="Resource sharing hub"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalscrollviewworkshop" />
+
+            <ImageButton
+                android:layout_width="34dp"
+                android:layout_height="31dp"
+                android:background="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.824"
+                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalscrollviewworkshop" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalscrollviewresourcesharinghub"
+                android:layout_width="368dp"
+                android:layout_height="150dp"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.511"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/resourcecardview1"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/resourceimage1"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ricardo" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:id="@+id/resourceauthor1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter_light"
+                                    android:hint="Author1"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="11dp" />
+
+                                <TextView
+                                    android:id="@+id/resourcetitle1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:hint="Title1"
+                                    android:paddingEnd="40dp"
+                                    android:textSize="12dp" />
+
+                                <TextView
+                                    android:id="@+id/resourcecontent1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/lorem_ipsum"
+                                    android:paddingEnd="5dp"
+                                    android:textSize="9dp" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/resourcecardview2"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/resourceimage2"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ricardo" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:id="@+id/resourceauthor2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter_light"
+                                    android:hint="Author2"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="11dp" />
+
+                                <TextView
+                                    android:id="@+id/resourcetitle2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:hint="Title2"
+                                    android:paddingEnd="40dp"
+                                    android:textSize="12dp" />
+
+                                <TextView
+                                    android:id="@+id/resourcecontent2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/lorem_ipsum"
+                                    android:paddingEnd="5dp"
+                                    android:textSize="9dp" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/resourcecardview3"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/resourceimage3"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ricardo" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:id="@+id/resourceauthor3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter_light"
+                                    android:hint="Author3"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="11dp" />
+
+                                <TextView
+                                    android:id="@+id/resourcetitle3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:hint="Title3"
+                                    android:paddingEnd="40dp"
+                                    android:textSize="12dp" />
+
+                                <TextView
+                                    android:id="@+id/resourcecontent3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/lorem_ipsum"
+                                    android:paddingEnd="5dp"
+                                    android:textSize="9dp" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/semiboldoutfit"
+                android:text="Scholarship and grant finder"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalscrollviewresourcesharinghub" />
+
+            <ImageButton
+                android:layout_width="34dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="8dp"
+                android:background="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.693"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalscrollviewresourcesharinghub" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalscrollviewscholarship"
+                android:layout_width="368dp"
+                android:layout_height="170dp"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toBottomOf="@id/constraintlayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.511"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/scholarshipcardview1"
+                        android:layout_width="260dp"
+                        android:layout_height="160dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/scholarshiptitle1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_semibold"
+                                android:hint="Scholarship1fafafafasfasfafasfasfasfggggg"
+                                android:paddingStart="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingRight="70dp"
+                                android:paddingBottom="10dp"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/scholarshipdeadline1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_light"
+                                android:hint="deadline1"
+                                android:paddingStart="15dp"
+                                android:textSize="12dp" />
+
+                            <TextView
+                                android:id="@+id/scholarshipcontent1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_light"
+                                android:hint="@string/lorem_ipsum"
+                                android:paddingLeft="15dp"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="10dp"
+                                android:textSize="12dp" />
+
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/scholarshipcardview2"
+                        android:layout_width="260dp"
+                        android:layout_height="160dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/scholarshiptitle2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_semibold"
+                                android:hint="Scholarship1fafafafasfasfafasfasfasfggggg"
+                                android:paddingStart="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingRight="70dp"
+                                android:paddingBottom="10dp"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/scholarshipdeadline2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_light"
+                                android:hint="deadline2"
+                                android:paddingStart="15dp"
+                                android:textSize="12dp" />
+
+                            <TextView
+                                android:id="@+id/scholarshipcontent2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_light"
+                                android:hint="@string/lorem_ipsum"
+                                android:paddingLeft="15dp"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="10dp"
+                                android:textSize="12dp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/scholarshipcardview3"
+                        android:layout_width="260dp"
+                        android:layout_height="160dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/scholarshiptitle3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_semibold"
+                                android:hint="Scholarship1fafafafasfasfafasfasfasfggggg"
+                                android:paddingStart="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingRight="70dp"
+                                android:paddingBottom="10dp"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/scholarshipdeadline3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_light"
+                                android:hint="deadline3"
+                                android:paddingStart="15dp"
+                                android:textSize="12dp" />
+
+                            <TextView
+                                android:id="@+id/scholarshipcontent3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_light"
+                                android:hint="@string/lorem_ipsum"
+                                android:paddingLeft="15dp"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="10dp"
+                                android:textSize="12dp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/testing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="clickme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/semiboldoutfit"
+        android:paddingTop="15dp"
+        android:text="Are you ready\nto gain new\nknowledge?"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="368dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="10dp"
+        android:alpha="0.8"
+        android:background="@color/white"
+        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+        app:itemBackground="@null"
+        app:itemIconSize="32dp"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollview"
+        app:menu="@menu/global_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
