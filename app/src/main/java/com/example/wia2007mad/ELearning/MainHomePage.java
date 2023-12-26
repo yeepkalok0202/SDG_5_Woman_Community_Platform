@@ -11,12 +11,15 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.MainHomePageBinding;
+
+import java.util.Objects;
 
 public class MainHomePage extends AppCompatActivity {
     private NavController navController;
@@ -31,20 +34,27 @@ public class MainHomePage extends AppCompatActivity {
         setSupportActionBar(binding.ToolbarMainPage);
         ActionBar actionBar=getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true); // for the 'up' button
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            // for the 'up' button
             // further customization goes here
         }
-        if (isHomeFragmentActive()) {
-            binding.ToolbarMainPage.setVisibility(View.GONE);
-        } else {
-            binding.ToolbarMainPage.setVisibility(View.VISIBLE);
-        }
+        binding.ToolbarMainPage.setVisibility(View.GONE);
+
         appBarConfiguration= new AppBarConfiguration.Builder(R.id.homeFragment,R.id.infoFragment,R.id.settingFragment,R.id.profileFragment).build();
         NavHostFragment host = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.FragmentContainer);
         navController=host.getNavController();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.bottomNavigationView,navController);
-
+        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
+            @Override
+            public void onDestinationChanged(NavController controller, NavDestination destination, Bundle arguments) {
+                if (destination.getId() == R.id.homeFragment) {
+                    binding.ToolbarMainPage.setVisibility(View.GONE);
+                } else {
+                    binding.ToolbarMainPage.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
   /*  @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -65,17 +75,7 @@ public class MainHomePage extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        return super.onSupportNavigateUp();
+        return NavigationUI.navigateUp(navController,appBarConfiguration)||super.onSupportNavigateUp();
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.global_menu, menu);
-        return true;
-    }
-
-    private boolean isHomeFragmentActive() {
-        // Replace this with your logic to determine if the Home Fragment is active
-        // For example, you can check the current destination of the NavController
-        return navController.getCurrentDestination().getId() == R.id.homeFragment;
-    }
 }

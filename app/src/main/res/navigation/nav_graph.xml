@@ -23,13 +23,13 @@
     <fragment
         android:id="@+id/infoFragment"
         android:name="com.example.wia2007mad.ELearning.InfoFragment"
-        android:label="fragment_info"
+        android:label=" "
         tools:layout="@layout/fragment_info" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.wia2007mad.ELearning.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        android:label=" "
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_profileFragment_to_updateProfileFragment"
             app:destination="@id/updateProfileFragment"
@@ -38,7 +38,7 @@
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.example.wia2007mad.ELearning.SettingFragment"
-        android:label="fragment_setting"
+        android:label=" "
         tools:layout="@layout/fragment_setting" />
     <fragment
         android:id="@+id/updateProfileFragment"
