@@ -40,7 +40,7 @@ dependencies {
     implementation ("com.github.smarteist:autoimageslider:1.4.0")
     implementation ("com.github.bumptech.glide:glide:4.11.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.10.0")
+    implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.navigation:navigation-fragment:2.7.6")
     implementation("androidx.navigation:navigation-ui:2.7.6")
@@ -50,5 +50,7 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.11.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
     implementation ("com.squareup.picasso:picasso:2.71828")
-    implementation ("com.github.AnthonyFermin:DropDownView:1.0.1")
+    implementation ("com.github.hakobast:dropdown-textview:0.3.1")
+// Add any other AndroidX dependencies your project uses
+
 }

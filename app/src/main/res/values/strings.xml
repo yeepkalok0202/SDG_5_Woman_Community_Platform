@@ -47,8 +47,27 @@
     <string name="ApplyNowCagamas">
         <a href="https://scholarship.cagamas.com.my/">Apply Now</a>
     </string>
-    <string name="Details"><u>Details</u></string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title1">How to edit your profile?</string>
+    <string name="title2">How to reset my password</string>
+    <string name="title3">Log out of your account</string>
+    <string name="title4">How do I search for something within a section</string>
+    <string name="title5">How emergency locator access my location</string>
+    <string name="title6">How can I join the workshop?</string>
+    <string name="title7">What is this app for?</string>
+    <string name="title8">How can I benefited from this app?</string>
+    <string name="title9">Is my personal data secured?</string>
+    <string name="title10">How frequent is the content in this app updated?</string>
+
+    <string name="content1">1. Navigate to profile section\n2. Click the edit button\n3. Update your profile data\n4. Press update</string>
+    <string name="content2">1. Navigate to setting section\n2. Search for change password\n3. Update your password.\n4. Follow the prompt and email confirmation</string>
+    <string name="content3">1. Navigate to setting section\n2. Search for log out</string>
+    <string name="content4">- A search bar is contained within the top of searchable contents</string>
+    <string name="content5">- Only accurate location are perceived from devices when the emergency locator is accessed, we do not collect user\'s location for malicious purpose.</string>
+    <string name="content6">- Social market and E-learning modules do provide workshop to enhance knowledge</string>
+    <string name="content7">- This app is primarily as an initiative to achieve SDG 5 goals as well as to promote gender equality</string>
+    <string name="content8">- Gender doesn\'t matter. However females will find useful resources accessible in our app.</string>
+    <string name="content9">- Yes, your data is stored within a secured database. Unauthorized third party will not gain access to the data and we are responsible to keep safe of our data.</string>
+    <string name="content10">-  The content of HerJourney is updated weekly.</string>
 
 </resources>

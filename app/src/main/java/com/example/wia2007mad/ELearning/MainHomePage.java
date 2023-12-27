@@ -52,6 +52,18 @@ public class MainHomePage extends AppCompatActivity {
                     binding.ToolbarMainPage.setVisibility(View.GONE);
                 } else {
                     binding.ToolbarMainPage.setVisibility(View.VISIBLE);
+                    if(destination.getId()==R.id.infoFragment){
+                        binding.toolbartitle.setText("Info");
+                    }
+                    else if(destination.getId()==R.id.settingFragment){
+                        binding.toolbartitle.setText("Settings");
+                    }
+                    else if(destination.getId()==R.id.profileFragment){
+                        binding.toolbartitle.setText("Profile");
+                    }
+                    else{
+                        binding.toolbartitle.setText("Update Profile");
+                    }
                 }
             }
         });

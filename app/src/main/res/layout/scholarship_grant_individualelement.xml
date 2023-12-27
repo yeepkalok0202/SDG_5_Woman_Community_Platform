@@ -77,7 +77,7 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/inter_semibold"
                 android:layout_marginRight="10dp"
-                android:text="@string/Details"
+                android:text="Details"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
