@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:paddingTop="100dp"
-    tools:context=".ELearning.SettingFragment">
+    tools:context=".AllModules.SettingFragment">
 
     <ImageView
         android:layout_width="300dp"

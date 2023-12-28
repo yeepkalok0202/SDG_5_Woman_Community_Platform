@@ -1,6 +1,6 @@
 plugins {
     id("com.android.application")
-
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -52,6 +52,10 @@ dependencies {
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("com.github.hakobast:dropdown-textview:0.3.1")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
-// Add any other AndroidX dependencies your project uses
-
+    //firebase stuff
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    // Add the dependencies for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
+    implementation("com.google.firebase:firebase-auth")
 }

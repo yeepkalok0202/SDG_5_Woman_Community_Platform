@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ELearning.HomeFragment">
+    tools:context=".AllModules.HomeFragment">
 
     <TextView
         android:id="@+id/bigtitle"
@@ -92,7 +92,7 @@
             app:layout_constraintVertical_bias="0.8">
 
             <ImageButton
-                android:id="@+id/careerbuttongogogo"
+                android:id="@+id/socialmarketbuttongogogo"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -116,6 +116,7 @@
             app:layout_constraintVertical_bias="0.8">
 
             <ImageButton
+                android:id="@+id/careerbuttongogogo"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"

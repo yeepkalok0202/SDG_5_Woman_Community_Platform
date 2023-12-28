@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/FragmentContainer"
+        android:id="@+id/FragmentContainerForMainHomePage"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/FragmentContainer">
+        app:layout_constraintTop_toTopOf="@+id/FragmentContainerForMainHomePage">
 
         <TextView
             android:id="@+id/toolbartitle"
@@ -54,7 +54,7 @@
         android:alpha="0.8"
         app:itemIconSize="32dp"
         app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="@+id/FragmentContainer"
+        app:layout_constraintBottom_toBottomOf="@+id/FragmentContainerForMainHomePage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"

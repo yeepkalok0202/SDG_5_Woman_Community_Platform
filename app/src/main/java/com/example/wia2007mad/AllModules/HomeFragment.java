@@ -1,4 +1,4 @@
-package com.example.wia2007mad.ELearning;
+package com.example.wia2007mad.AllModules;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,13 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
-import com.example.wia2007mad.R;
+import com.bumptech.glide.load.engine.Engine;
 import com.example.wia2007mad.databinding.FragmentHomeBinding;
+import com.example.wia2007mad.databinding.MainHomePageBinding;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
-
-import java.util.ArrayList;
 
 
 public class HomeFragment extends Fragment {
@@ -95,6 +94,14 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), webViewPage.class);
                 String urlToLoad = "https://www.omfif.org/2023/03/global-economy-cant-afford-to-wait-for-gender-equality/"; // Replace with the URL you want to open
                 intent.putExtra("url", urlToLoad);
+                startActivity(intent);
+            }
+        });
+
+        binding.elearningbuttongogogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), MainPageElearning.class);
                 startActivity(intent);
             }
         });

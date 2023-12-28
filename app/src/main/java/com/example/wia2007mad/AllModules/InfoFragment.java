@@ -1,4 +1,4 @@
-package com.example.wia2007mad.ELearning;
+package com.example.wia2007mad.AllModules;
 
 import android.os.Bundle;
 
@@ -10,18 +10,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.wia2007mad.R;
-import com.example.wia2007mad.databinding.FragmentUpdateProfileBinding;
 
+import com.example.wia2007mad.databinding.FragmentInfoBinding;
 
-public class UpdateProfileFragment extends Fragment {
+public class InfoFragment extends Fragment {
 
-    private FragmentUpdateProfileBinding binding;
+   private FragmentInfoBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding= FragmentUpdateProfileBinding.inflate(inflater,container,false);
+        binding= FragmentInfoBinding.inflate(inflater,container,false);
         return binding.getRoot();
+
     }
+
 }

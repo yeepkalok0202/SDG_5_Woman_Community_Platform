@@ -1,7 +1,6 @@
-package com.example.wia2007mad.ELearning;
+package com.example.wia2007mad.AllModules;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -9,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.fragment.NavHostFragment;
@@ -18,8 +16,6 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.MainHomePageBinding;
-
-import java.util.Objects;
 
 public class MainHomePage extends AppCompatActivity {
     private NavController navController;
@@ -41,7 +37,7 @@ public class MainHomePage extends AppCompatActivity {
         binding.ToolbarMainPage.setVisibility(View.GONE);
 
         appBarConfiguration= new AppBarConfiguration.Builder(R.id.homeFragment,R.id.infoFragment,R.id.settingFragment,R.id.profileFragment).build();
-        NavHostFragment host = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.FragmentContainer);
+        NavHostFragment host = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.FragmentContainerForMainHomePage);
         navController=host.getNavController();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.bottomNavigationView,navController);

@@ -1,4 +1,4 @@
-package com.example.wia2007mad.ELearning;
+package com.example.wia2007mad.AllModules;
 
 import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;

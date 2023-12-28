@@ -1,7 +1,8 @@
-package com.example.wia2007mad.ELearning;
+package com.example.wia2007mad.AllModules;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.ui.AppBarConfiguration;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -10,13 +11,13 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.MainpageELearningBinding;
 
 public class MainPageElearning extends AppCompatActivity {
+
     private MainpageELearningBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,10 @@ public class MainPageElearning extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-        binding.testing.setOnClickListener(new View.OnClickListener() {
+        binding.Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPopup();
+                onBackPressed();
             }
         });
     }

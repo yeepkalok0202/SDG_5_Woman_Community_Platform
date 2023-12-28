@@ -9,10 +9,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.wia2007mad" />
+                  <option name="mobileSdkAppId" value="1:286591008302:android:27d7208661f931736c69bf" />
+                  <option name="projectId" value="authenticationmodule-bebd2" />
+                  <option name="projectNumber" value="286591008302" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

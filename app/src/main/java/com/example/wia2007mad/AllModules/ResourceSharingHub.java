@@ -1,7 +1,6 @@
-package com.example.wia2007mad.ELearning;
+package com.example.wia2007mad.AllModules;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
@@ -9,25 +8,26 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.wia2007mad.databinding.ScholarshipDetailsBinding;
+import com.example.wia2007mad.databinding.ResourceSharingBinding;
 
-public class ScholarshipDetails extends AppCompatActivity {
+public class ResourceSharingHub extends AppCompatActivity {
 
-
-    protected ScholarshipDetailsBinding binding;
+    private ResourceSharingBinding binding;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ScholarshipDetailsBinding.inflate(getLayoutInflater());
+        binding=ResourceSharingBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Toolbar toolbar=binding.ToolbarScholarshipDetails;
+        Toolbar toolbar=binding.ToolbarResource;
         setSupportActionBar(toolbar);
         ActionBar actionBar=getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true); // for the 'up' button
             // further customization goes here
         }
+
+
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

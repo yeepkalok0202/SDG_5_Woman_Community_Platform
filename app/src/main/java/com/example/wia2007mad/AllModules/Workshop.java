@@ -1,28 +1,25 @@
-package com.example.wia2007mad.ELearning;
+package com.example.wia2007mad.AllModules;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.wia2007mad.databinding.ScholarshipGrantBinding;
+import com.example.wia2007mad.databinding.WorkshopBinding;
 
-import java.util.Objects;
+public class Workshop extends AppCompatActivity {
 
-public class ScholarshipGrant extends AppCompatActivity {
+    private WorkshopBinding binding;
 
-    private ScholarshipGrantBinding binding;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = ScholarshipGrantBinding.inflate(getLayoutInflater());
+        binding=WorkshopBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Toolbar toolbar=binding.ToolbarScholarship;
+        Toolbar toolbar=binding.ToolbarWorkshop;
         setSupportActionBar(toolbar);
         ActionBar actionBar=getSupportActionBar();
         if (actionBar != null) {
@@ -44,5 +41,4 @@ public class ScholarshipGrant extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AllModules.Register">
+
+    <TextView
+        android:id="@+id/TVIntro"
+        android:layout_width="218dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/outfitbold"
+        android:text="Register your Account"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TVDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/outfitregular"
+        android:text="Enter your details below"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVIntro" />
+
+    <EditText
+        android:id="@+id/ETName"
+        android:layout_width="342dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:fontFamily="@font/outfitregular"
+        android:hint="Name"
+        android:inputType="text"
+        android:textColor="#555454"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVDesc" />
+
+    <EditText
+        android:id="@+id/ETHpNumber"
+        android:layout_width="342dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:fontFamily="@font/outfitregular"
+        android:hint="Phone Number"
+        android:inputType="text"
+        android:textColor="#555454"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETName" />
+
+    <EditText
+        android:id="@+id/ETPassword"
+        android:layout_width="342dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:fontFamily="@font/outfitregular"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="#555454"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETEmail" />
+
+    <EditText
+        android:id="@+id/ETConfirmPassword"
+        android:layout_width="342dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:fontFamily="@font/outfitregular"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textColor="#555454"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETPassword" />
+
+    <EditText
+        android:id="@+id/ETEmail"
+        android:layout_width="342dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:fontFamily="@font/outfitregular"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="#555454"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETHpNumber" />
+
+    <Button
+        android:id="@+id/BtnRegister"
+        android:layout_width="342dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="24dp"
+        android:text="Register"
+        android:backgroundTint="@color/darkblue"
+        android:fontFamily="@font/outfitregular"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETConfirmPassword" />
+
+    <TextView
+        android:id="@+id/TVLoginStatement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/outfitregular"
+        android:textSize="16sp"
+        android:textColor="#555454"
+        android:text="Already have an account?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnRegister" />
+
+    <TextView
+        android:id="@+id/TVLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/outfitbold"
+        android:text="Login"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/TVLoginStatement"
+        app:layout_constraintTop_toBottomOf="@+id/BtnRegister" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "286591008302",
+    "firebase_url": "https://authenticationmodule-bebd2-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "authenticationmodule-bebd2",
+    "storage_bucket": "authenticationmodule-bebd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286591008302:android:9e5ab23ca180559c6c69bf",
+        "android_client_info": {
+          "package_name": "com.example.authenticationmodule"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2bJCbrXwXcUa-ZegWQ4iAaXSUX278SUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286591008302:android:4d62b1dc5bff00416c69bf",
+        "android_client_info": {
+          "package_name": "com.example.mad_assignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2bJCbrXwXcUa-ZegWQ4iAaXSUX278SUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286591008302:android:27d7208661f931736c69bf",
+        "android_client_info": {
+          "package_name": "com.example.wia2007mad"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2bJCbrXwXcUa-ZegWQ4iAaXSUX278SUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
