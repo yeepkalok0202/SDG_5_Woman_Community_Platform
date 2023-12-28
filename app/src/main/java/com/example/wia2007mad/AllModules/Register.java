@@ -114,7 +114,7 @@ public class Register extends AppCompatActivity {
         Map<String, Object> userDetails = new HashMap<>();
         userDetails.put("uid", user.getUid());
         userDetails.put("email", user.getEmail());
-        userDetails.put("phone number", phonenumber);
+        userDetails.put("phone_number", phonenumber);
         userDetails.put("username",username);
         userDetails.put("role","user");
         // Add other user details as needed

@@ -59,7 +59,7 @@
                 android:layout_gravity="start"
                 android:fontFamily="@font/inter_semibold"
                 android:padding="10dp"
-                android:hint="Name:"
+                android:text="Name:"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -70,7 +70,7 @@
                 android:layout_gravity="start"
                 android:fontFamily="@font/inter_semibold"
                 android:padding="10dp"
-                android:hint="Email:"
+                android:text="Email:"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -81,7 +81,7 @@
                 android:layout_gravity="start"
                 android:fontFamily="@font/inter_semibold"
                 android:padding="10dp"
-                android:hint="Phone Number:"
+                android:text="Phone Number:"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
         </LinearLayout>

@@ -47,13 +47,11 @@ import java.util.Map;
 
 public class ProfileFragment extends Fragment {
 
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
-    StorageReference storageReference;
+   // FirebaseDatabase firebaseDatabase;
+   // DatabaseReference databaseReference;
+   // StorageReference storageReference;
     String storagepath = "Users_Profile_Cover_image/";
-    String uid;
     ImageView set;
-    TextView profilepic, editname, editpassword;
     ProgressDialog pd;
     private static final int CAMERA_REQUEST = 100;
     private static final int STORAGE_REQUEST = 200;
@@ -87,9 +85,9 @@ public class ProfileFragment extends Fragment {
         pd = new ProgressDialog(getContext());
         pd.setCanceledOnTouchOutside(false);
 
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        storageReference= FirebaseStorage.getInstance().getReference();
-        databaseReference=firebaseDatabase.getReference("Users");
+        //firebaseDatabase=FirebaseDatabase.getInstance();
+      //  storageReference= FirebaseStorage.getInstance().getReference();
+       // databaseReference=firebaseDatabase.getReference("Users");
         cameraPermission=new String[]{
                 Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE
         };
@@ -116,8 +114,8 @@ public class ProfileFragment extends Fragment {
                         binding.profileusername.setText(profileusername);
                         String profileemail=binding.profileemail.getText().toString()+" "+user.getEmail();
                         binding.profileemail.setText(profileemail);
-                        String profielphonenumber=binding.profilephonenumber.getText().toString()+" "+user.getPhonenumber();
-                        binding.profilephonenumber.setText(profielphonenumber);
+                        String profilephonenumber=binding.profilephonenumber.getText().toString()+" "+user.getPhone_number();
+                        binding.profilephonenumber.setText(profilephonenumber);
                     }
                 }
             }
@@ -196,7 +194,7 @@ public class ProfileFragment extends Fragment {
                         if(task.isSuccessful()){
                             Map<String,Object> updateddata=new HashMap<>();
                             updateddata.put("username",newusernameinput);
-                            updateddata.put("phonenumber",newphonenumberinput);
+                            updateddata.put("phone_number",newphonenumberinput);
 
                             //update data
                             userreference.update(updateddata).addOnSuccessListener(new OnSuccessListener<Void>() {
