@@ -59,7 +59,7 @@ public class MainHomePage extends AppCompatActivity {
                         binding.toolbartitle.setText("Settings");
                     }
                     else if(destination.getId()==R.id.profileFragment){
-                        binding.toolbartitle.setText("Profile");
+                        binding.toolbartitle.setText("My Profile");
                     }
                     else{
                         binding.toolbartitle.setText("Update Profile");

@@ -51,6 +51,7 @@ dependencies {
     annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("com.github.hakobast:dropdown-textview:0.3.1")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 // Add any other AndroidX dependencies your project uses
 
 }
