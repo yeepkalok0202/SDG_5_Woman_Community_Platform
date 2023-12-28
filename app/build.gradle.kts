@@ -58,4 +58,12 @@ dependencies {
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
     implementation("com.google.firebase:firebase-auth")
+    implementation ("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-database:20.3.0")
+    // Firebase Storage
+    implementation ("com.google.firebase:firebase-storage:20.3.0") // Check for the latest version
+
+    // Make sure you also have Firebase Core
+    implementation ("com.google.firebase:firebase-core:21.1.1")
+
 }

@@ -14,9 +14,11 @@ import android.widget.Toast;
 
 import com.example.wia2007mad.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 public class ResetPassword extends AppCompatActivity {
 
@@ -35,10 +37,11 @@ public class ResetPassword extends AppCompatActivity {
             public void onClick(View view) {
                 String userEmail = ETGetEmail.getText().toString();
 
-                        if(TextUtils.isEmpty(userEmail) && !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()){
+                        if(TextUtils.isEmpty(userEmail) || !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()){
                             Toast.makeText(ResetPassword.this, "Enter your registered email id",Toast.LENGTH_SHORT).show();
                             return;
                         }
+
                         mAuth.sendPasswordResetEmail(userEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
@@ -50,8 +53,10 @@ public class ResetPassword extends AppCompatActivity {
                                 }
                             }
                         });
-                    }
-                });
+
+                }});
+
+
                 BtnCancelReset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -60,5 +65,28 @@ public class ResetPassword extends AppCompatActivity {
                 });
 
             }
-        }
+    private void checkIfEmailExists(String userEmail, EmailCheckCallback callback) {
+        FirebaseAuth.getInstance().fetchSignInMethodsForEmail(userEmail)
+                .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                        boolean isNewUser = task.getResult().getSignInMethods().isEmpty();
+                        if (isNewUser) {
+                            callback.onEmailChecked(false); // Email does not exist
+                        } else {
+                            callback.onEmailChecked(true); // Email exists
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Consider handling the failure case or passing the failure through the callback
+                        callback.onEmailChecked(false);
+                    }
+                });
+    }
+
+
+}
 

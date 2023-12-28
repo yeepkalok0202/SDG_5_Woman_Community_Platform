@@ -13,14 +13,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wia2007mad.R;
+import com.example.wia2007mad.databinding.RegisterBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Register extends AppCompatActivity {
 
+    RegisterBinding binding;
 
     FirebaseAuth mAuth;
 /*
@@ -38,14 +46,14 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register);
-
-        EditText ETName = findViewById(R.id.ETName);
-        EditText ETHpNumber = findViewById(R.id.ETHpNumber);
-        EditText ETEmail = findViewById(R.id.ETEmail);
-        EditText ETPassword = findViewById(R.id.ETPassword);
-        EditText EtConfirmPassword = findViewById(R.id.ETConfirmPassword);
-        Button BtnRegister = findViewById(R.id.BtnRegister);
+        binding=RegisterBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        EditText ETName = binding.ETName;
+        EditText ETHpNumber = binding.ETHpNumber;
+        EditText ETEmail = binding.ETEmail;
+        EditText ETPassword = binding.ETPassword;
+        EditText EtConfirmPassword = binding.ETConfirmPassword;
+        Button BtnRegister = binding.BtnRegister;
 
 
         TextView TVLogin = findViewById(R.id.TVLogin);
@@ -60,9 +68,11 @@ public class Register extends AppCompatActivity {
         BtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email, password;
+                String email, password,username,phonenumber;
                 email = String.valueOf(ETEmail.getText());
                 password = String.valueOf(ETPassword.getText());
+                username = String.valueOf(ETName.getText());
+                phonenumber= String.valueOf(ETHpNumber.getText());
 
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(Register.this,"Enter email", Toast.LENGTH_SHORT).show();
@@ -81,6 +91,9 @@ public class Register extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(Register.this, "Account created.",
                                             Toast.LENGTH_SHORT).show();
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    assert user != null;
+                                    addUserDetailsToFirestore(user,phonenumber,username);
                                     Intent intent = new Intent(getApplicationContext(),Login.class);
                                     startActivity(intent);
                                     finish();
@@ -96,6 +109,31 @@ public class Register extends AppCompatActivity {
             }
         });
     }
+    public void addUserDetailsToFirestore(FirebaseUser user,String phonenumber,String username) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Map<String, Object> userDetails = new HashMap<>();
+        userDetails.put("uid", user.getUid());
+        userDetails.put("email", user.getEmail());
+        userDetails.put("phone number", phonenumber);
+        userDetails.put("username",username);
+        userDetails.put("role","user");
+        // Add other user details as needed
+
+        db.collection("users").document(user.getUid()).set(userDetails)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // Handle success
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Handle failure
+                    }
+                });
+    }
+
 
 
 }

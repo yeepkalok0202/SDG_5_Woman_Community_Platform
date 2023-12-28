@@ -22,6 +22,7 @@ public class Login extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
+    /*
     @Override
     public void onStart() {
         super.onStart();
@@ -32,6 +33,7 @@ public class Login extends AppCompatActivity {
             finish();
         }
     }
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
