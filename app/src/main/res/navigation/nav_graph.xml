@@ -40,9 +40,4 @@
         android:name="com.example.wia2007mad.ELearning.SettingFragment"
         android:label=" "
         tools:layout="@layout/fragment_setting" />
-    <fragment
-        android:id="@+id/updateProfileFragment"
-        android:name="com.example.wia2007mad.ELearning.UpdateProfileFragment"
-        android:label="fragment_update_profile"
-        tools:layout="@layout/fragment_update_profile" />
 </navigation>

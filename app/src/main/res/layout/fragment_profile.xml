@@ -8,16 +8,22 @@
 
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilepicholder"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:id="@+id/profilepic"
-        android:src=""/>
+        android:layout_marginTop="160dp"
+        android:src="@drawable/ricardo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view"
         android:layout_width="405dp"
         android:layout_height="498dp"
         android:background="#C3E5F0"
+        android:alpha="0.15"
         android:elevation="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,17 +36,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="100dp"
-        android:clickable="true"
-        android:focusable="true"
         app:cardElevation="5dp"
         app:layout_constraintBottom_toTopOf="@+id/ChangeProfileDetailsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/profilepicholder">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,7 +87,6 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/ChangeProfileDetailsButton"
-        android:contextClickable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -91,14 +94,14 @@
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="100dp"
         android:clickable="true"
+        android:contextClickable="true"
         android:focusable="true"
         app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProfileSection"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/ProfileSection">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -119,7 +122,7 @@
                 android:layout_gravity="center_vertical"
                 android:fontFamily="@font/inter_semibold"
                 android:padding="10dp"
-                android:text="Change Profile Details"
+                android:text="Update Profile Details"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
         </LinearLayout>

@@ -22,5 +22,6 @@ public class SettingFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding= FragmentSettingBinding.inflate(inflater,container,false);
         return binding.getRoot();
+
     }
 }

@@ -12,7 +12,8 @@
         android:layout_height="300dp"
         android:layout_gravity="center"
         android:scaleType="centerCrop"
-        android:src="@drawable/settingpicture" />
+        android:src="@drawable/settingpicture"
+        android:background="@null"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/changepasswordbuttoninsetting"
