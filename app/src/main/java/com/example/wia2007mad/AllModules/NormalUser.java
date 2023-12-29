@@ -1,11 +1,12 @@
 package com.example.wia2007mad.AllModules;
 
 public class NormalUser {
-    private String username,email,phone_number,imageurl,role;
+    private String uid,username,email,phone_number,imageurl,role;
 
 
     public NormalUser(){};
-    public NormalUser(String username, String email, String phone_number, String imageurl,String role) {
+    public NormalUser(String uid,String username, String email, String phone_number, String imageurl,String role) {
+        this.uid=uid;
         this.username = username;
         this.email = email;
         this.phone_number = phone_number;
@@ -51,5 +52,13 @@ public class NormalUser {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

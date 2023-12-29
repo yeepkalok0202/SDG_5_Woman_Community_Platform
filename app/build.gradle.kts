@@ -65,5 +65,7 @@ dependencies {
 
     // Make sure you also have Firebase Core
     implementation ("com.google.firebase:firebase-core:21.1.1")
+    implementation("com.google.firebase:firebase-appcheck")
+
 
 }
