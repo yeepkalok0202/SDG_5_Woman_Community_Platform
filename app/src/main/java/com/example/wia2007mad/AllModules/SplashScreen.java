@@ -5,14 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.SplashScreenBinding;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SplashScreen extends AppCompatActivity {
-
+    FirebaseFirestore firebaseFirestore;
     private static int SPLASH_SCREEN= 5000;
     //Variable for animation
     Animation topAnim, bottomAnim,quote1Anim,quote2Anim;
@@ -43,5 +48,7 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
             }
         },SPLASH_SCREEN);
+
+
     }
 }

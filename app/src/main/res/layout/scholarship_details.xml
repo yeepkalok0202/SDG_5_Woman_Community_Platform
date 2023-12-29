@@ -15,7 +15,7 @@
         android:minHeight="?attr/actionBarSize">
 
         <TextView
-            android:id="@+id/scholarshiptitle"
+            android:id="@+id/scholarshipdetailstitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -32,13 +32,19 @@
     android:layout_marginEnd="25dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/scholarshipdetailsimageview"/>
     <TextView
-        android:id="@+id/scholarshipdeadline"
+        android:id="@+id/scholarshipdetailsdeadline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="Deadline :\n"
-        android:layout_margin="20dp"
+        android:hint="Deadline :"
+        android:layout_margin="10dp"
         android:fontFamily="@font/regularoutfit"
         android:textSize="18dp"
         />
@@ -50,7 +56,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
-        android:layout_height="470dp"
+        android:layout_height="300dp"
         android:layout_margin="20dp"
         android:layout_gravity="center"
         app:cardBackgroundColor="@color/white"
@@ -64,7 +70,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/scholarshipcontent"
+                android:id="@+id/scholarshipdetailscontent"
                 android:hint="@string/lorem_ipsum"/>
         </ScrollView>
     </com.google.android.material.card.MaterialCardView>
@@ -81,8 +87,5 @@
         android:fontFamily="@font/semiboldoutfit"
         android:text="Apply Now"
         app:cornerRadius="5dp"
-        android:textSize="17dp"
-        />
-
-
+        android:textSize="17dp" />
 </LinearLayout>
