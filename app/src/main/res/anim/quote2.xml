@@ -3,14 +3,14 @@
     <translate
         android:fromXDelta="10%"
         android:fromYDelta="0%"
-        android:duration="1000"
-        android:startOffset="3000"
+        android:duration="700"
+        android:startOffset="1000"
         />
 
     <alpha
         android:fromAlpha="0.1"
         android:toAlpha="1"
-        android:duration="1000"
-        android:startOffset="3000"
+        android:duration="700"
+        android:startOffset="1000"
         />
 </set>

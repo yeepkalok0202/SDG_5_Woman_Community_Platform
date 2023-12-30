@@ -1,13 +1,20 @@
 package com.example.wia2007mad.AllModules;
 
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.fragment.NavHostFragment;
@@ -21,6 +28,8 @@ public class MainHomePage extends AppCompatActivity {
     private NavController navController;
     private AppBarConfiguration appBarConfiguration;
     private MainHomePageBinding binding;
+    private boolean quit;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +93,56 @@ public class MainHomePage extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         return NavigationUI.navigateUp(navController,appBarConfiguration)||super.onSupportNavigateUp();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (isDefaultFragmentDisplayed()) {
+            showPopup("See you...", "Are you sure you want to quit?");
+        } else {
+            // Handle other cases or simply call super.onBackPressed()
+            System.out.println("here debug"+isDefaultFragmentDisplayed());
+            super.onBackPressed();
+        }
+    }
+
+    private void showPopup(String title1, String content1) {
+        // Create the dialog using 'this' for the activity context
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.overlay_confirm);
+
+        // Initialize the views
+        TextView cancel = dialog.findViewById(R.id.popupcancel);
+        TextView ok = dialog.findViewById(R.id.popupok);
+        TextView title = dialog.findViewById(R.id.popuptitle);
+        TextView content = dialog.findViewById(R.id.popupcontent);
+
+        // Set text
+        title.setText(title1);
+        content.setText(content1);
+
+        // Set the close button action
+        cancel.setOnClickListener(v -> {
+            dialog.dismiss();
+            quit = false;
+        });
+        ok.setOnClickListener(v -> {
+            dialog.dismiss();
+            quit = true;
+            super.onBackPressed();
+        });
+
+        // Set the dialog background to transparent
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
+
+        // Show the popup dialog
+        dialog.show();
+    }
+
+    private boolean isDefaultFragmentDisplayed() {
+        return navController.getCurrentDestination()!=null && navController.getCurrentDestination().getId()==R.id.homeFragment;
     }
 
 }

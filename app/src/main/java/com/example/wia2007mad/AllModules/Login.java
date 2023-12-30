@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -22,18 +23,19 @@ public class Login extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
-    /*
     @Override
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+
+        SharedPreferences sharedPreferences= getSharedPreferences("AppPrefs",MODE_PRIVATE);
+        boolean isLoggedOut=sharedPreferences.getBoolean("isLoggedOut",false);
+        if(currentUser != null && !isLoggedOut){
             Intent intent = new Intent(getApplicationContext(),MainHomePage.class);
             startActivity(intent);
             finish();
         }
     }
-     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +90,10 @@ public class Login extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "Login Successful.",
                                             Toast.LENGTH_SHORT).show();
+                                    SharedPreferences preferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putBoolean("isLoggedOut", false);
+                                    editor.apply();
                                     Intent intent = new Intent(getApplicationContext(),MainHomePage.class);
                                     startActivity(intent);
                                     finish();

@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.MainpageELearningBinding;
 
@@ -30,6 +31,35 @@ public class MainPageElearning extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+
+        String  article1=getString(R.string.virtualthumbnaillink1),
+                article2=getString(R.string.virtualthumbnaillink2),
+                article3=getString(R.string.virtualthumbnaillink3);
+        Glide.with(this)
+                .load(article1)
+                .into(binding.workshopimage1);
+        Glide.with(this)
+                .load(article2)
+                .into(binding.workshopimage2);
+        Glide.with(this)
+                .load(article3)
+                .into(binding.workshopimage3);
+
+        binding.virtualbuttongogogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(), Workshop.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.scholarshipbuttongogogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(), ScholarshipGrant.class);
+                startActivity(intent);
             }
         });
     }
@@ -58,7 +88,7 @@ public class MainPageElearning extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String url = "https://www.google.com";
-                Intent intent = new Intent(Intent.ACTION_VIEW);
+                Intent intent = new Intent(getApplicationContext(), webViewPage.class);
                 intent.setData(Uri.parse(url));
                 startActivity(intent);
                 dialog.dismiss();

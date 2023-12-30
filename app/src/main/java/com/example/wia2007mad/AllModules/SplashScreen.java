@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class SplashScreen extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
-    private static int SPLASH_SCREEN= 5000;
+    private static int SPLASH_SCREEN= 1650;
     //Variable for animation
     Animation topAnim, bottomAnim,quote1Anim,quote2Anim;
     SplashScreenBinding splashScreenBinding;
