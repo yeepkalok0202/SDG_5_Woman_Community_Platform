@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="350dp"
-        android:layout_height="160dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:cardElevation="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,9 +41,9 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_semibold"
                     android:hint="@string/app_name"
-                    android:paddingStart="10dp"
+                    android:paddingStart="20dp"
                     android:paddingTop="10dp"
-                    android:layout_marginRight="100dp"
+                    android:layout_marginRight="10dp"
                     android:paddingBottom="10dp"
                     android:textSize="15dp" />
 
@@ -54,7 +55,7 @@
                     android:hint="deadline1"
                     android:paddingBottom="5dp"
                     android:paddingRight="100dp"
-                    android:paddingStart="15dp"
+                    android:paddingStart="20dp"
                     android:textSize="12dp" />
 
 
@@ -63,11 +64,13 @@
                     android:layout_width="240dp"
                     android:layout_height="94dp"
                     android:fontFamily="@font/inter_light"
-                    android:hint="@string/lorem_ipsum"
+                    android:text="@string/lorem_ipsum"
                     android:paddingTop="10dp"
-                    android:paddingLeft="35dp"
+                    android:paddingLeft="25dp"
                     android:paddingBottom="10dp"
-                    android:textSize="12dp" />
+                    android:textSize="12dp"
+                    android:maxLines="4"
+                    android:ellipsize="end"/>
 
             </LinearLayout>
 

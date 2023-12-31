@@ -62,9 +62,43 @@ public class MainPageElearning extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        binding.workshopcardview1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+        binding.workshopcardview2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+        binding.workshopcardview3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+        binding.scholarshipcardview1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        binding.scholarshipcardview2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        binding.scholarshipcardview3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
-    private void showPopup() {
+    private void showPopup(String titleinput,String contentinput,String urlinput) {
         // Create the dialog
         final Dialog dialog = new Dialog(MainPageElearning.this);
         dialog.setContentView(R.layout.overlay_confirm);
@@ -74,9 +108,9 @@ public class MainPageElearning extends AppCompatActivity {
                 title=dialog.findViewById(R.id.popuptitle),content=dialog.findViewById(R.id.popupcontent);
 
         // Set text or other properties if needed
-        title.setText("Redirect to Scholar");
+        title.setText(titleinput);
 
-        content.setText("You are now on board to external website of women health matters...");
+        content.setText(contentinput);
         // Set the close button action
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,9 +121,8 @@ public class MainPageElearning extends AppCompatActivity {
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.google.com";
                 Intent intent = new Intent(getApplicationContext(), webViewPage.class);
-                intent.setData(Uri.parse(url));
+                intent.setData(Uri.parse(urlinput));
                 startActivity(intent);
                 dialog.dismiss();
             }
