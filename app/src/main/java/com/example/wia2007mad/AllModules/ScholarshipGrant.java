@@ -45,9 +45,7 @@ public class ScholarshipGrant extends AppCompatActivity implements ScholarshipRe
             actionBar.setDisplayHomeAsUpEnabled(true); // for the 'up' button
             // further customization goes here
         }
-        //binding.scholarshipsearchview.requestFocus();
 
-        // Show the keyboard
        // InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
        // imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
         binding.scholarshipsearchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

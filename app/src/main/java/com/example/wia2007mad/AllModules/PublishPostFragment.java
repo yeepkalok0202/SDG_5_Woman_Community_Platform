@@ -155,21 +155,21 @@ public class PublishPostFragment extends Fragment {
 
                 // If empty set error
                 if (TextUtils.isEmpty(titl)) {
-                    title.setError("Title need to be included");
+                    title.setError("Include your title here");
                     Toast.makeText(getContext(), "Title need to be included", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 // If empty set error
                 if (TextUtils.isEmpty(description)) {
-                    des.setError("Description Cant be empty");
+                    des.setError("Spice up your sharing here");
                     Toast.makeText(getContext(), "Don't left out your description !", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 // If empty show error
                 if (imageuri == null) {
-                    Toast.makeText(getContext(), "Select an Image", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Pick an Image", Toast.LENGTH_LONG).show();
                     return;
                 } else {
                     pd.setMessage("Publishing...");
@@ -208,7 +208,7 @@ public class PublishPostFragment extends Fragment {
         builder.create().show();
     }
 
-    // check for storage permission
+    // check for storage permission in phone
     private Boolean checkStoragePermission() {
         boolean result = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 == (PackageManager.PERMISSION_GRANTED);
@@ -232,7 +232,6 @@ public class PublishPostFragment extends Fragment {
                 }
             }
 
-            // function end
             break;
             case STORAGE_REQUEST: {
                 if (grantResults.length > 0) {
@@ -250,7 +249,7 @@ public class PublishPostFragment extends Fragment {
         }
     }
 
-    // request for permission to write data into storage
+    // request for permission to write data into storage in phone
     private void requestStoragePermission() {
         requestPermissions(storagePermission, STORAGE_REQUEST);
     }
