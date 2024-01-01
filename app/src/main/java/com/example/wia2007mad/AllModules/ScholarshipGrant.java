@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -68,6 +70,15 @@ public class ScholarshipGrant extends AppCompatActivity implements ScholarshipRe
         //set adapter
         binding.scholarshiprecyclerview.setAdapter(scholarshipAdapter);
         binding.scholarshiprecyclerview.setLayoutManager(new LinearLayoutManager(this));
+
+        binding.refreshscholar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scholarshipAdapter.setFilteredList(originallist);
+                scholarshipAdapter.notifyDataSetChanged();
+                Toast.makeText(getApplicationContext(),"Refreshing...", Toast.LENGTH_SHORT).show();
+            }
+        });
         setContentView(binding.getRoot());
 
     }
@@ -144,5 +155,12 @@ public class ScholarshipGrant extends AppCompatActivity implements ScholarshipRe
     private void updateRecyclerView() {
         scholarshipAdapter.setFilteredList(originallist);
         scholarshipAdapter.notifyDataSetChanged();
+
+        String searchQuery = getIntent().getStringExtra("searchQuery");
+
+        // Call the filterList method with the search query
+        if (searchQuery != null && !searchQuery.isEmpty()) {
+            filterList(searchQuery);
+        }
     }
 }

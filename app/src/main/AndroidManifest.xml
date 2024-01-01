@@ -54,8 +54,7 @@
         </activity>
 
         <activity android:name=".AllModules.ScholarshipDetails"
-            android:parentActivityName=".AllModules.ScholarshipGrant"
-            android:configChanges="orientation|screenSize">
+            android:parentActivityName=".AllModules.ScholarshipGrant">
         </activity>
         <activity android:name=".AllModules.webViewPage">
         </activity>
@@ -66,9 +65,9 @@
             android:parentActivityName=".AllModules.Login">
         </activity>
 
-        <activity android:name=".AllModules.MainPageElearning"
-            android:parentActivityName=".AllModules.MainHomePage">
-
+        <activity android:name=".AllModules.WorkshopDetails"
+            android:parentActivityName=".AllModules.Workshop"
+            android:configChanges="orientation|screenSize">
         </activity>
         <meta-data
             android:name="preloaded_fonts"

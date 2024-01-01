@@ -13,7 +13,7 @@ import com.example.wia2007mad.R;
 
 import java.util.ArrayList;
 
-public class ScholarshipAdapter extends RecyclerView.Adapter<MyViewHolder> {
+public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.ScholarshipViewHolder> {
 
     Context context;
     ArrayList<ScholarshipModel> scholarshipModelArrayList;
@@ -33,14 +33,14 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ScholarshipViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.scholarship_grant_individualelement, parent, false);
-        return new MyViewHolder(view, scholarshipRecyclerViewInterface);
+        return new ScholarshipViewHolder(view, scholarshipRecyclerViewInterface);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ScholarshipViewHolder holder, int position) {
         holder.scholarshipcontent.setText(scholarshipModelArrayList.get(position).getScholarshipDescription());
         holder.scholarshipdeadline.setText(scholarshipModelArrayList.get(position).getScholarshipDeadline());
         holder.scholarshiptitle.setText(scholarshipModelArrayList.get(position).getScholarshipTitle());
@@ -50,12 +50,11 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public int getItemCount() {
         return scholarshipModelArrayList.size();
     }
-}
-     class MyViewHolder extends RecyclerView.ViewHolder{
+    class ScholarshipViewHolder extends RecyclerView.ViewHolder{
 
         TextView scholarshiptitle,scholarshipdeadline,scholarshipcontent;
 
-        public MyViewHolder(@NonNull View itemView, ScholarshipRecyclerViewInterface scholarshipRecyclerViewInterface) {
+        public ScholarshipViewHolder(@NonNull View itemView, ScholarshipRecyclerViewInterface scholarshipRecyclerViewInterface) {
             super(itemView);
 
             scholarshiptitle=itemView.findViewById(R.id.scholarshiptitle);
@@ -77,4 +76,6 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
         }
     }
+}
+
 

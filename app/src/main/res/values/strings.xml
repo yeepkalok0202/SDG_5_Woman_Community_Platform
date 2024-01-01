@@ -44,9 +44,7 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="ApplyNowCagamas">
-        <a href="https://scholarship.cagamas.com.my/">Apply Now</a>
-    </string>
+
 
     <string name="title1">How to edit your profile?</string>
     <string name="title2">How to reset my password</string>
@@ -163,39 +161,9 @@ Phone:
 Email:
 daikin.scholarship@daikin.com.my</string>
 
-    <string name="scholarshiplink2">https://career.gadang.com.my/scholarship_program.php</string>
-    <string name="scholarshiptitletitle2">Biasiswa Gadang Scholarship</string>
-    <string name="scholarshipdeadline2">Ongoing</string>
-    <string name="scholarshipdescription2">Gadang is recognized as one of the leading companies catapulting Malaysia’s development into greater heights. Our core business encompasses the areas of Construction, Engineering, Property Development and Utilities. At Gadang, we endeavour to deliver the highest standards of performance in all our ventures.
-
-We are in search of talented individuals with an excellent academic standing, demonstrated exemplary character and outstanding leadership qualities and in possession of a strong sense of commitment and passion to succeed in their chosen disciplines. Through this scholarship program, we intend to nurture and develop these exceptional individuals to achieve success in their professional endeavours through undergoing study programs at any of the local leading public or private universities/colleges.
-
-OUR REQUIREMENTS:
-
-Must be a Malaysian citizen, age 23 and below.
-Must be waiting for admission or currently pursuing a full-time undergraduates degree course in local.
-University/ College that are registered with Ministry of Higher Education.
-Applicants currently pursuing their degree must obtain a minimum CGPA of 3.5 out of 4.00 in their latest semester result.
-Must be not holding any other scholarship from other organization for the same course of study (apart from PTPTN).
-Must have achieve a minimum 5A’s in SPM/ O-Level and minimum 3A’s STPM/ A-Level or equivalent, whichever is applicable.
-Demonstrate active involvement in extra-curricular activities.
-Competent in verbal and written English.
-Possess strong leadership qualities.
-Demonstrate need for financial assistance.
-BACHELOR DEGREE IN ANY ONE OF THE BELOW COURSES:
-
-Civil Engineering
-Structure, Hydraulic
-Geo-technical/ Highway/ Pavement
-Quantity Surveying
-Building Management
-Highway Engineering
-Construction Management
-Mechanical Engineering
-Electrical Engineering
-Business Management
-Human Resources
-Finance &amp; Accounting</string>
+    <string name="scholarshiptitletitle2">Biasiswa Sunway Scholarship</string>
+    <string name="scholarshipdeadline2">OPEN</string>
+    <string name="scholarshipdescription2">New Sunway Scholarships 2022 for SPM &amp; O-Level Leavers Not sure what’s next after SPM or O-Level? Start your next journey at Sunway with our lucrative scholarships. Choose from Pre-U, ADTP, Diploma and Accounting programmes.  Jeffrey Cheah Entrance Scholarship 2022 APPLICATION DEADLINE: 2 weeks after commencement of programmes or 2 weeks after the release of actual results  a ) For Pre-University &amp; Certified Accounting Technician(CAT) &amp; Certificate in Finance, Accounting &amp; Business (CFAB)  b) For American Degree Transfer Program (ADTP)  c) For Diploma Programmes  d) For Degree Programmes  e) For Association of Chartered Certified Accountants (ACCA) &amp; The Institute of Chartered Accountants in England &amp; Wales (ICAEW) Programmes</string>
 
     <string name="scholarshiplink3">https://www.sheffield.ac.uk/international/fees-and-funding/scholarships/postgraduate/great-scholarships/malaysia#:~:text=The%20GREAT%20Scholarships%202024%20programme,world-class%20UK%20higher%20education</string>
     <string name="scholarshiptitletitle3">Biasiswa British Council GREAT Scholarships 2024</string>
@@ -334,5 +302,7 @@ Through this approach, we navigate the challenge without delving into mathematic
 </string>
     <string name="virtualthumbnaillink3">https://i.ytimg.com/vi/zdAJXil-NvA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCFzkrRbA5RtryxQqUmmRXqxH66Nw</string>
     <string name="virtualtitle3">if x+y=8, find the max of x^y</string>
+
+    <string name="resourcesharingdescription">Welcome to our resource-sharing hub, where collaboration meets convenience. Explore and contribute to a wealth of valuable resources in one place. Whether you\'re seeking knowledge, tools, or expertise, we\'ve got you covered. Join our community and make sharing resources a breeze. Unlock the power of collective knowledge today.</string>
     <!-- resources sharing hub-->
 </resources>

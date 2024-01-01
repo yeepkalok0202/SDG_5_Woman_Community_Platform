@@ -42,13 +42,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/workshopsearchview"
                 style="@style/CustomSearchViewStyle"
-                android:layout_width="358dp"
+                android:layout_width="308dp"
                 android:layout_height="50dp"
                 android:background="#FFFFFF"
                 app:iconifiedByDefault="false"
@@ -56,15 +55,22 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:queryHint="  Search" />
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/refreshicon"
+                android:id="@+id/refreshworkshop"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_margin="10dp"
         android:id="@+id/workshoprecyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="540dp" />
+        android:layout_width="382dp"
+        android:layout_height="608dp"
+        android:layout_margin="10dp" />
 
 
 </LinearLayout>

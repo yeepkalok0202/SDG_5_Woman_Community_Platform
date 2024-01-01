@@ -66,33 +66,54 @@ public class MainPageElearning extends AppCompatActivity {
         binding.workshopcardview1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(MainPageElearning.this, Workshop.class);
+                intent.putExtra("searchQuery","Java");
+                startActivity(intent);
+
             }
         });
         binding.workshopcardview2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(MainPageElearning.this, Workshop.class);
+                intent.putExtra("searchQuery","Tey");
+                startActivity(intent);
+
             }
         });
         binding.workshopcardview3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(MainPageElearning.this, Workshop.class);
+                intent.putExtra("searchQuery","BlackPenRedPen");
+                startActivity(intent);
+
             }
         });
         binding.scholarshipcardview1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(MainPageElearning.this, ScholarshipGrant.class);
+                intent.putExtra("searchQuery","Daikin");
+                startActivity(intent);
 
             }
         });
         binding.scholarshipcardview2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(MainPageElearning.this, ScholarshipGrant.class);
+                intent.putExtra("searchQuery","Sunway");
+                startActivity(intent);
 
             }
         });
         binding.scholarshipcardview3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(MainPageElearning.this, ScholarshipGrant.class);
+                intent.putExtra("searchQuery","British");
+                startActivity(intent);
 
             }
         });

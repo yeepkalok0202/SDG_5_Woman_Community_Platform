@@ -47,7 +47,7 @@
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/scholarshipsearchview"
                 style="@style/CustomSearchViewStyle"
-                android:layout_width="358dp"
+                android:layout_width="308dp"
                 android:layout_height="50dp"
                 android:background="#FFFFFF"
                 app:iconifiedByDefault="false"
@@ -55,6 +55,13 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:queryHint="  Search" />
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/refreshicon"
+                android:id="@+id/refreshscholar"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

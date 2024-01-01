@@ -44,47 +44,74 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="40dp"
                     android:minHeight="?attr/actionBarSize">
-
-                    <TextView
-                        android:id="@+id/workshoptitle"
+                    <HorizontalScrollView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="10dp"
-                        android:fontFamily="@font/semiboldoutfit"
-                        android:hint="Details?"
-                        android:paddingEnd="12dp"
-                        android:textColor="@color/black"
-                        android:textSize="22dp"
-                        android:textStyle="bold" />
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="15dp">
+                        <TextView
+                            android:id="@+id/workshoptitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginEnd="10dp"
+                            android:fontFamily="@font/semiboldoutfit"
+                            android:hint="Details?"
+                            android:paddingEnd="12dp"
+                            android:textColor="@color/black"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            />
+                    </HorizontalScrollView>
+
                 </androidx.appcompat.widget.Toolbar>
 
                 <WebView
                     android:id="@+id/workshopvideo"
                     android:layout_width="match_parent"
                     android:layout_height="250sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/inter_semibold"
-                    android:text="Description :"
-                    android:textSize="21dp" />
-
-                <ScrollView
-                    android:layout_width="wrap_content"
-                    android:layout_height="310dp"
-                    android:layout_margin="30dp"
-                    android:scrollbarFadeDuration="@integer/material_motion_duration_long_2">
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/inter"
+                        android:text="Author :"
+                        android:textSize="21dp" />
 
                     <TextView
+                        android:id="@+id/workshopauthorindetailsview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="21dp" />
+                </LinearLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="340dp"
+                    app:cardElevation="20dp"
+                    android:layout_margin="20dp">
+                    <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/lorem_ipsum"
-                        android:padding="10dp" />
-                </ScrollView>
+                        android:layout_margin="10dp"
+                        android:scrollbarFadeDuration="@integer/material_motion_duration_long_2">
+
+                        <TextView
+                            android:id="@+id/workshopdescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/lorem_ipsum"
+                            android:padding="10dp" />
+                    </ScrollView>
+                </com.google.android.material.card.MaterialCardView>
+
 
 
             </LinearLayout>
