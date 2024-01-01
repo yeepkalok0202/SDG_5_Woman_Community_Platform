@@ -1,7 +1,9 @@
 package com.example.wia2007mad.AllModules;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +31,7 @@ public class Workshop extends AppCompatActivity implements WorkshopRecyclerViewI
     DocumentReference documentReference;
     ArrayList<WorkshopModel> filteredlist,originallist=new ArrayList<>();
     WorkshopAdapter workshopAdapter;
+    private ProgressDialog progressDialog;
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +128,10 @@ public class Workshop extends AppCompatActivity implements WorkshopRecyclerViewI
     }
 
     private void setupWorkshopModel(){
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading..."); // Set your loading message
+        progressDialog.setCancelable(true); // Make it non-cancelable
+        progressDialog.show();
         firebaseFirestore=FirebaseFirestore.getInstance();
         for(int i=1;i<=15;i++){
             final int finalI = i;
@@ -141,7 +148,11 @@ public class Workshop extends AppCompatActivity implements WorkshopRecyclerViewI
                     }
                     if(finalI==15){
                         updateRecyclerView();
+                        if (progressDialog.isShowing()) {
+                            progressDialog.dismiss();
+                        }
                     }
+
                 }
             });
         }
@@ -158,4 +169,5 @@ public class Workshop extends AppCompatActivity implements WorkshopRecyclerViewI
             filterList(searchQuery);
         }
     }
+
 }

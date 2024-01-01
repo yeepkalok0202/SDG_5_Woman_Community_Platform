@@ -1,5 +1,6 @@
 package com.example.wia2007mad.AllModules;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -29,6 +30,8 @@ public class ScholarshipGrant extends AppCompatActivity implements ScholarshipRe
     ArrayList<ScholarshipModel> filteredlist,originallist=new ArrayList<>();
     ScholarshipAdapter scholarshipAdapter;
     private ScholarshipGrantBinding binding;
+    private ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,6 +133,10 @@ public class ScholarshipGrant extends AppCompatActivity implements ScholarshipRe
     }
 
     private void setupScholarshipModel(){
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading..."); // Set your loading message
+        progressDialog.setCancelable(true); // Make it non-cancelable
+        progressDialog.show();
         firebaseFirestore=FirebaseFirestore.getInstance();
         for(int i=1;i<=15;i++){
             final int finalI = i;  // Declare 'finalI' as a final copy of 'i'
@@ -146,6 +153,9 @@ public class ScholarshipGrant extends AppCompatActivity implements ScholarshipRe
                     }
                     if (finalI== 15) {
                         updateRecyclerView();
+                        if (progressDialog.isShowing()) {
+                            progressDialog.dismiss();
+                        }
                     }
                 }
             });
