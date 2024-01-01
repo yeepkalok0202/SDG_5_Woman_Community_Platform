@@ -71,6 +71,7 @@ public class Workshop extends AppCompatActivity implements WorkshopRecyclerViewI
             @Override
             public void onClick(View v) {
                 workshopAdapter.setFilteredList(originallist);
+                filteredlist=originallist;
                 workshopAdapter.notifyDataSetChanged();
                 Toast.makeText(getApplicationContext(),"Refreshing...", Toast.LENGTH_SHORT).show();
             }

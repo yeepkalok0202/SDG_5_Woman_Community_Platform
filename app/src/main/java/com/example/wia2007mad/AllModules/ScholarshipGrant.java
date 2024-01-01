@@ -78,6 +78,7 @@ public class ScholarshipGrant extends AppCompatActivity implements ScholarshipRe
             @Override
             public void onClick(View v) {
                 scholarshipAdapter.setFilteredList(originallist);
+                filteredlist=originallist;
                 scholarshipAdapter.notifyDataSetChanged();
                 Toast.makeText(getApplicationContext(),"Refreshing...", Toast.LENGTH_SHORT).show();
             }

@@ -147,7 +147,7 @@ public class ProfileFragment extends Fragment {
         storageReference = FirebaseStorage.getInstance().getReference();
         databaseReference = firebaseDatabase.getReference("users");
 
-        Query query = databaseReference.equalTo(firebaseUser.getUid());
+        Query query = databaseReference.child(firebaseUser.getUid());
         System.out.println(firebaseUser.getUid());
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -278,7 +278,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        Query query = databaseReference.equalTo(firebaseUser.getUid());
+        Query query = databaseReference.child(firebaseUser.getUid());
         System.out.println(firebaseUser.getUid());
 
         query.addValueEventListener(new ValueEventListener() {
