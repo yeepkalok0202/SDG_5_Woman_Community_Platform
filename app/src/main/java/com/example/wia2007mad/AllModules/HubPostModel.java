@@ -1,6 +1,8 @@
 package com.example.wia2007mad.AllModules;
 
 
+import java.util.Comparator;
+
 public class HubPostModel {
     String description;
     String ptime;
@@ -15,6 +17,12 @@ public class HubPostModel {
     public HubPostModel() {
     }
 
+    static Comparator<HubPostModel> descendingnameComparator=new Comparator<HubPostModel>() {
+        @Override
+        public int compare(HubPostModel o1, HubPostModel o2) {
+            return o2.getPtime().compareTo(o1.getPtime());
+        }
+    };
     public HubPostModel(String description, String pid, String ptime, String title, String udp, String uemail, String uid, String uimage, String uname) {
         this.description = description;
         this.pid = pid;

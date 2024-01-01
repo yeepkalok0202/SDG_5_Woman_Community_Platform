@@ -8,7 +8,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.Manifest;
 
@@ -51,8 +54,14 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 
 
 public class PublishPostFragment extends Fragment {
@@ -117,6 +126,7 @@ public class PublishPostFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                pd.dismiss();
 
             }
         });
@@ -152,21 +162,30 @@ public class PublishPostFragment extends Fragment {
 
                 String titl = "" + title.getText().toString().trim();
                 String description = "" + des.getText().toString().trim();
-
+                pd.setTitle("Be patient");
+                pd.setMessage("Loading content...");
+                pd.show();
+                pd.dismiss();
                 // If empty set error
                 if (TextUtils.isEmpty(titl)) {
                     title.setError("Include your title here");
                     Toast.makeText(getContext(), "Title need to be included", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                pd.setTitle("Be patient");
+                pd.setMessage("Loading content...");
+                pd.show();
+                pd.dismiss();
                 // If empty set error
                 if (TextUtils.isEmpty(description)) {
                     des.setError("Spice up your sharing here");
                     Toast.makeText(getContext(), "Don't left out your description !", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                pd.setTitle("Be patient");
+                pd.setMessage("Loading content...");
+                pd.show();
+                pd.dismiss();
                 // If empty show error
                 if (imageuri == null) {
                     Toast.makeText(getContext(), "Pick an Image", Toast.LENGTH_LONG).show();
@@ -291,18 +310,31 @@ public class PublishPostFragment extends Fragment {
 
         // Get the current timestamp as an Instant
         Instant instant = null;
+        LocalDateTime dateTime = null;
+        DateTimeFormatter formatter = null;
+        String timestamptemp = null;
+
+        Locale locale = Locale.getDefault();
+        String countryCode = locale.getCountry();
+        String finalcountryCode="";
+
+        Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
+        try {
+            List<Address> addresses = geocoder.getFromLocationName(countryCode, 1);
+            if (addresses != null && !addresses.isEmpty()) {
+                finalcountryCode=addresses.get(0).getCountryName();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             instant = Instant.now();
+            dateTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+            formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            timestamptemp = dateTime.format(formatter)+" "+finalcountryCode;
         }
-
-        // Convert the Instant to milliseconds since epoch
-        long timestamptemp = 0;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            timestamptemp = instant.toEpochMilli();
-        }
-
-        // Convert the timestamp to a string
-        final String timestamp = String.valueOf(timestamptemp);
+        final String timestamp=timestamptemp;
         String filepathname = "Posts/" + "post" + timestamp;
         Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
