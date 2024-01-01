@@ -12,8 +12,8 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/ToolbarWorkshop"
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
         android:layout_height="40dp"
+        android:layout_marginTop="40dp"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize">
 
@@ -22,37 +22,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:textColor="@color/black"
             android:fontFamily="@font/semiboldoutfit"
             android:paddingEnd="12dp"
-            android:text="Virtual workshops and webinars"
+            android:text="Virtual Workshops &amp; Webinars "
+            android:textColor="@color/black"
             android:textSize="22dp"
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
+
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         app:cardElevation="25dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/workshopsearchview"
                 style="@style/CustomSearchViewStyle"
-                android:layout_width="377dp"
+                android:layout_width="358dp"
                 android:layout_height="50dp"
                 android:background="#FFFFFF"
                 app:iconifiedByDefault="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:queryHint="  Search"/>
-
+                app:queryHint="  Search" />
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
