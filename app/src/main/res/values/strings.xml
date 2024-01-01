@@ -304,5 +304,7 @@ Through this approach, we navigate the challenge without delving into mathematic
     <string name="virtualtitle3">if x+y=8, find the max of x^y</string>
 
     <string name="resourcesharingdescription">Welcome to our resource-sharing hub, where collaboration meets convenience. Explore and contribute to a wealth of valuable resources in one place. Whether you\'re seeking knowledge, tools, or expertise, we\'ve got you covered. Join our community and make sharing resources a breeze. Unlock the power of collective knowledge today.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- resources sharing hub-->
 </resources>

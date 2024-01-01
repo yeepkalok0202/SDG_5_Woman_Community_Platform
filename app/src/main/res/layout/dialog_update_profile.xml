@@ -42,6 +42,7 @@
                 android:layout_centerVertical="true"
                 app:boxStrokeColor="@color/black"
                 app:cursorColor="@color/black"
+                app:hintEnabled="false"
                 >
 
                 <EditText
@@ -62,14 +63,16 @@
                 android:layout_centerVertical="true"
                 android:padding="10dp"
                 app:boxStrokeColor="@color/black"
-                app:cursorColor="@color/black">
+                app:cursorColor="@color/black"
+                app:hintEnabled="false">
 
                 <EditText
                     android:id="@+id/newphonenumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Phone Number"
-                    android:inputType="phone"/>
+                    android:inputType="phone"
+                    />
 
 
             </com.google.android.material.textfield.TextInputLayout>

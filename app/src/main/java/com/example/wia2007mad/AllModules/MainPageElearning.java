@@ -63,6 +63,14 @@ public class MainPageElearning extends AppCompatActivity {
             }
         });
 
+        binding.resourcesharinghubsection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(), ResourceSharingHub.class);
+                startActivity(intent);
+            }
+        });
+
         binding.workshopcardview1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,43 +125,6 @@ public class MainPageElearning extends AppCompatActivity {
 
             }
         });
-    }
-
-    private void showPopup(String titleinput,String contentinput,String urlinput) {
-        // Create the dialog
-        final Dialog dialog = new Dialog(MainPageElearning.this);
-        dialog.setContentView(R.layout.overlay_confirm);
-
-        // Initialize the views
-        TextView cancel = dialog.findViewById(R.id.popupcancel),ok=dialog.findViewById(R.id.popupok),
-                title=dialog.findViewById(R.id.popuptitle),content=dialog.findViewById(R.id.popupcontent);
-
-        // Set text or other properties if needed
-        title.setText(titleinput);
-
-        content.setText(contentinput);
-        // Set the close button action
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-        ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), webViewPage.class);
-                intent.setData(Uri.parse(urlinput));
-                startActivity(intent);
-                dialog.dismiss();
-            }
-        });
-        // Set the dialog background to transparent
-        if (dialog.getWindow() != null) {
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        }
-        // Show the popup dialog
-        dialog.show();
     }
 
 }

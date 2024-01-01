@@ -50,7 +50,8 @@
         </activity>
 
         <activity android:name=".AllModules.ResourceSharingHub"
-            android:parentActivityName=".AllModules.MainPageElearning">
+            android:parentActivityName=".AllModules.MainPageElearning"
+            android:windowSoftInputMode="adjustNothing">
         </activity>
 
         <activity android:name=".AllModules.ScholarshipDetails"
@@ -69,6 +70,7 @@
             android:parentActivityName=".AllModules.Workshop"
             android:configChanges="orientation|screenSize">
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

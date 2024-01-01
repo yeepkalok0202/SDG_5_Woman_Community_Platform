@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/displayPostFragment"
+        android:title="Hub"
+        android:icon="@drawable/hub"
+        android:checkable="true"
+        android:iconTint="@color/white"
+        />
+
+    <item
+        android:id="@+id/publishPostFragment"
+        android:title="Post"
+        android:icon="@drawable/publishpost"
+        android:checkable="true"
+        android:iconTint="@color/white"
+        />
+</menu>
