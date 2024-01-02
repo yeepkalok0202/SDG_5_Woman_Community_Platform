@@ -76,6 +76,7 @@ public class WorkshopDetails extends AppCompatActivity {
                 binding.workshoptitle.setText(workshopModel.getTitle());
                 binding.workshopdescription.setText(workshopModel.getDescription());
                 binding.workshopauthorindetailsview.setText(workshopModel.getAuthor());
+                System.out.println(workshopModel.getDescription()+" im here see xia");
             }
 
 

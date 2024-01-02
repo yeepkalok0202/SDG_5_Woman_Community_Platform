@@ -107,7 +107,6 @@
                             android:id="@+id/workshopdescription"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/lorem_ipsum"
                             android:padding="10dp" />
                     </ScrollView>
                 </com.google.android.material.card.MaterialCardView>
