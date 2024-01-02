@@ -11,6 +11,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <application
         android:allowBackup="true"
@@ -70,10 +73,67 @@
             android:parentActivityName=".AllModules.Workshop"
             android:configChanges="orientation|screenSize">
         </activity>
+        <activity
+            android:name=".AllModules.web"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".AllModules.ChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:parentActivityName=".AllModules.recentConversation"/>
+        <activity
+            android:name=".AllModules.recentConversation"
+            android:exported="false"
+            android:parentActivityName=".AllModules.CounsellingService"/>
+        <activity
+            android:name=".AllModules.selectCounsellorActivity"
+            android:exported="false"
+            android:parentActivityName=".AllModules.recentConversation"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD75uNNaoCnlpAaskEv0xnYaO5IQPRirjk" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".AllModules.CounsellingService"
+            android:exported="false"
+            android:parentActivityName=".AllModules.HealthHome"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+        <activity
+            android:name=".AllModules.HealthEducation"
+            android:exported="false"
+            android:parentActivityName=".AllModules.HealthHome"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+        <activity
+            android:name=".AllModules.EmergencyLocator"
+            android:exported="false"
+            android:parentActivityName=".AllModules.HealthHome"/>
+
+        <activity
+            android:name=".AllModules.HealthHome"
+            android:exported="false"
+            android:parentActivityName=".AllModules.MainHomePage"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name=".AllModules.firebase.MessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

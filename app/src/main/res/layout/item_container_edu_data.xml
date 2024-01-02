@@ -2,20 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/workshopcarditem"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="15dp"
-        android:layout_marginBottom="15dp">
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        app:cardCornerRadius="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,45 +20,46 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/workshopimage"
+                android:id="@+id/imageView"
                 android:layout_width="160dp"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ricardo" />
+                android:src="@drawable/background_image_2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:paddingLeft="8dp"
+                android:background="@color/white"
                 android:paddingRight="5dp">
 
                 <TextView
-                    android:id="@+id/workshopauthor"
+                    android:id="@+id/authorName"
+                    android:layout_marginStart="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter"
-                    android:hint="Author1"
-                    android:layout_marginTop="40dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="2dp"
-                    android:textSize="11dp"
-                    android:layout_gravity="start"/>
+                    android:textColor="@color/quantum_grey600"
+                    android:fontFamily="@font/interlight"
+                    android:layout_marginTop="10dp"
+                    android:hint="Richard Lee"
+                    android:textSize="12dp" />
 
                 <TextView
-                    android:id="@+id/workshoptitle"
+                    android:id="@+id/healthEducationTitle"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Accounting for Beginner"
+                    android:textColor="@color/darkblue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/interextrabold"
-                    android:hint="Title1"
-                    android:paddingEnd="10dp"
-                    android:maxLines="3"
-                    android:ellipsize="end"
-                    android:textSize="12dp"
-                    android:gravity="start"/>
+                    android:fontFamily="@font/interbold"
+                    android:textSize="14dp"/>
 
             </LinearLayout>
+
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

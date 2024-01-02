@@ -89,9 +89,7 @@
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toEndOf="@+id/materialCardView3"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.8"
-            android:clickable="true"
-            android:focusable="true">
+            app:layout_constraintVertical_bias="0.8">
 
             <ImageButton
                 android:id="@+id/socialmarketbuttongogogo"
@@ -116,8 +114,7 @@
             app:layout_constraintStart_toEndOf="@+id/materialCardView"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.8"
-            android:clickable="true"
-            android:focusable="true">
+            >
 
             <ImageButton
                 android:id="@+id/careerbuttongogogo"
@@ -142,8 +139,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            android:clickable="true"
-            android:focusable="true">
+            >
 
             <ImageButton
                 android:id="@+id/elearningbuttongogogo"
@@ -168,8 +164,7 @@
             app:layout_constraintStart_toEndOf="@+id/materialCardView2"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.6"
-            android:clickable="true"
-            android:focusable="true">
+            >
 
             <ImageButton
                 android:id="@+id/healthbuttongogogo"
