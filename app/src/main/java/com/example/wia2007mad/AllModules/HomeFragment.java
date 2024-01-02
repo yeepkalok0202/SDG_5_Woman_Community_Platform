@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.Engine;
+import com.example.wia2007mad.AllModules.socialmarket.Home;
 import com.example.wia2007mad.databinding.FragmentHomeBinding;
 import com.example.wia2007mad.databinding.MainHomePageBinding;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
@@ -110,6 +111,15 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(), HealthHome.class);
+                startActivity(intent);
+            }
+        });
+
+        //go to social market
+        binding.socialmarketbuttongogogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), Home.class);
                 startActivity(intent);
             }
         });

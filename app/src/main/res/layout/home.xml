@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/TVIntro"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/outfitbold"
+        android:text="Are you \nplanning to \nstart a business?"
+        android:textColor="@color/black"
+        android:textSize="37sp"/>
+
+    <ImageButton
+        android:id="@+id/socialmarkethomebutton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginStart="15dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/homeicon"
+        android:layout_toRightOf="@id/TVIntro"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TVIntro"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginStart="18dp"
+                    android:fontFamily="@font/intersemibold"
+                    android:text="Success stories"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+                <ImageButton
+                    android:id="@+id/sucessarrow"
+                    android:layout_width="30dp"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@null"
+                    android:layout_gravity="end"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arrow_right"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+            
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/successcardview1"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp">
+                        
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/successimage1"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:id="@+id/successauthor1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/interblack"
+                                    android:text="Mary Barra"
+                                    android:layout_marginTop="6dp"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="16dp" />
+
+                                <TextView
+                                    android:id="@+id/successtitle1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/intersemibold"
+                                    android:text="The first female CEO of General Motors (GM) in the historically male-dominated auto industry"
+                                    android:layout_marginTop="10dp"
+                                    android:paddingEnd="5dp"
+                                    android:textSize="11dp" />
+
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/successcardview2"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/successimage2"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"/>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:id="@+id/successauthor2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/interblack"
+                                    android:text="Huda Kattan"
+                                    android:layout_marginTop="6dp"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="16dp" />
+
+                                <TextView
+                                    android:id="@+id/successtitle2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/intersemibold"
+                                    android:text="From Jobless to Beauty Boss"
+                                    android:layout_marginTop="10dp"
+                                    android:paddingEnd="5dp"
+                                    android:textSize="12dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/successcardview3"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/successimage3"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"/>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:id="@+id/successauthor3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/interblack"
+                                    android:text="Evgeniya Malina"
+                                    android:layout_marginTop="6dp"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="16dp" />
+
+                                <TextView
+                                    android:id="@+id/successtitle3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/intersemibold"
+                                    android:text="How she built a career in a man’s world"
+                                    android:layout_marginTop="10dp"
+                                    android:paddingEnd="5dp"
+                                    android:textSize="12dp" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+
+            </HorizontalScrollView>
+
+
+            <RelativeLayout
+                android:id="@+id/relativelayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/marketingrh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="18dp"
+                    android:fontFamily="@font/intersemibold"
+                    android:text="Marketing Resource Hub"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+                <ImageButton
+                    android:id="@+id/marketingarrow"
+                    android:layout_width="30dp"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:layout_gravity="end"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arrow_right"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:scrollbars="none">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/marketingcardview1"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/marketimage1"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"/>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="6dp">
+
+                                <TextView
+                                    android:id="@+id/marketauthor1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/interblack"
+                                    android:text="Simon Kingsnorth "
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="11dp" />
+
+                                <TextView
+                                    android:id="@+id/markettitle1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/intersemibold"
+                                    android:text="Digital Marketing Strategy"
+                                    android:paddingEnd="4dp"
+                                    android:textSize="16dp" />
+
+                                <TextView
+                                    android:id="@+id/marketcontent1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="An Integrated approach to online marketing"
+                                    android:paddingEnd="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="7dp"
+                                    android:textSize="12dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/marketingcardview2"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/marketimage2"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:id="@+id/marketauthor2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/interblack"
+                                    android:text="Ryan Holiday"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="11dp" />
+
+                                <TextView
+                                    android:id="@+id/markettitle2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/intersemibold"
+                                    android:text="Growth hacker marketing"
+                                    android:paddingEnd="4dp"
+                                    android:textSize="16dp" />
+
+                                <TextView
+                                    android:id="@+id/marketcontent2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="A growth hacker is someone who has thrown out the playbook of traditional marketing and replaced it with only what is testable, trackable, and scalable."
+                                    android:paddingEnd="5dp"
+                                    android:layout_marginBottom="7dp"
+                                    android:layout_marginTop="5dp"
+                                    android:textSize="12dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/marketingcardview3"
+                        android:layout_width="260dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:outlineAmbientShadowColor="#000000"
+                        android:outlineSpotShadowColor="#000000"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/marketimage3"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:id="@+id/marketauthor3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/interblack"
+                                    android:text="Seth Godin"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="2dp"
+                                    android:textSize="11dp" />
+
+                                <TextView
+                                    android:id="@+id/markettitle3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/intersemibold"
+                                    android:text="This is Marketing"
+                                    android:paddingEnd="4dp"
+                                    android:textSize="16dp" />
+
+                                <TextView
+                                    android:id="@+id/marketcontent3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Marketing is our quest to make change on behalf of those we serve, and we do it by understanding the irrational forces that drive each of us."
+                                    android:paddingEnd="5dp"
+
+                                    android:layout_marginBottom="7dp"
+                                    android:layout_marginTop="5dp"
+                                    android:textSize="12dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/businesspg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/intersemibold"
+                android:text="Business Planning Guidance"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/scholarshipcardview1"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="20dp"
+                android:outlineAmbientShadowColor="#000000"
+                android:outlineSpotShadowColor="#000000"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/businesstitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/interblack"
+                        android:text="Write your business plan"
+                        android:paddingStart="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="70dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/businesscontent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/interregular"
+                        android:text="Your business plan is the foundation of your business. Learn how to write a business plan quickly and efficiently with a business plan template."
+                        android:paddingStart="15dp"
+                        android:textSize="12dp" />
+
+                    <Button
+                        android:id="@+id/businessreadmore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="Read More"
+                        android:textColor="@color/black"
+                        android:scaleX="0.8"
+                        android:scaleY="0.8" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

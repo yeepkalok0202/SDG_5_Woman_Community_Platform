@@ -123,6 +123,30 @@
             android:parentActivityName=".AllModules.MainHomePage"
             android:theme="@style/Theme.MaterialComponents.NoActionBar" />
 
+        <activity android:name=".AllModules.socialmarket.Home"
+            android:parentActivityName=".AllModules.MainHomePage">
+        </activity>
+
+        <activity android:name=".AllModules.socialmarket.Business"
+            android:parentActivityName=".AllModules.socialmarket.Home">
+        </activity>
+
+        <activity android:name=".AllModules.socialmarket.Marketing"
+            android:parentActivityName=".AllModules.socialmarket.Home">
+        </activity>
+
+        <activity android:name=".AllModules.socialmarket.Success"
+            android:parentActivityName=".AllModules.socialmarket.Home">
+        </activity>
+
+        <activity android:name=".AllModules.socialmarket.CardDetailsActivity"
+            android:parentActivityName=".AllModules.socialmarket.Home">
+        </activity>
+
+        <activity android:name=".AllModules.socialmarket.SuccessDetailsActivity"
+            android:parentActivityName=".AllModules.socialmarket.Home">
+        </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
