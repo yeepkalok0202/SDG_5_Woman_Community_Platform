@@ -26,6 +26,7 @@
 
     <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
         <item name="queryBackground">@android:color/transparent</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
 

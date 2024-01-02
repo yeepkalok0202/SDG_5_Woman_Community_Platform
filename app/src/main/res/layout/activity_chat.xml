@@ -37,19 +37,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/white"/>
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id = "@+id/imageInfo"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart = "16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        android:padding="4dp"
-        android:src ="@drawable/outline_info_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white"/>
-
     <TextView
         android:id = "@+id/textName"
         android:layout_width="0dp"
@@ -63,7 +50,6 @@
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/imageBack"
-        app:layout_constraintEnd_toStartOf="@id/imageInfo"
         app:layout_constraintStart_toEndOf="@id/imageBack"
         app:layout_constraintTop_toTopOf="@id/imageBack"/>
 
