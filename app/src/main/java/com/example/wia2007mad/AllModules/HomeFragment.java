@@ -115,6 +115,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        binding.careerbuttongogogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), JobPortal.class);
+                startActivity(intent);
+            }
+        });
+
         //go to social market
         binding.socialmarketbuttongogogo.setOnClickListener(new View.OnClickListener() {
             @Override
