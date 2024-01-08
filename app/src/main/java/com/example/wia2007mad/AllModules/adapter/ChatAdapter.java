@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.wia2007mad.AllModules.model.ChatMessage;
+import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.ItemContainerReceivedMessageBinding;
 import com.example.wia2007mad.databinding.ItemContainerSentMessageBinding;
 
@@ -38,7 +39,8 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                             false
                     )
             );
-        }else{
+        }
+        else {
             return new ReceivedMessageViewHolder(
                     ItemContainerReceivedMessageBinding.inflate(
                             LayoutInflater.from(parent.getContext()),
@@ -98,11 +100,15 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         void setData(ChatMessage chatMessage, String receiverProfileImageUrl) {
             binding.textMessage.setText(chatMessage.message);
             binding.textDateTime.setText(chatMessage.dateTime);
-            // Use Glide to load the image from the URL
-            Glide.with(binding.imageProfile.getContext())
-                    .load(receiverProfileImageUrl)
-                    //.circleCrop() // if you want to apply some styling like rounding the image
-                    .into(binding.imageProfile);
+            if (receiverProfileImageUrl == null) {
+                binding.imageProfile.setImageResource(R.drawable.defaultprofilepicture);
+            } else {
+                // Use Glide to load the image from the URL
+                Glide.with(binding.imageProfile.getContext())
+                        .load(receiverProfileImageUrl)
+                        //.circleCrop() // if you want to apply some styling like rounding the image
+                        .into(binding.imageProfile);
+            }
         }
     }
 }

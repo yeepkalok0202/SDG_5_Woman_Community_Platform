@@ -1,16 +1,20 @@
 package com.example.wia2007mad.AllModules;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.core.content.ContextCompat;
 
 import com.example.wia2007mad.AllModules.adapter.HealthEduAdapter;
 import com.example.wia2007mad.AllModules.listeners.HealthEducationListener;
 import com.example.wia2007mad.AllModules.model.EduData;
 import com.example.wia2007mad.AllModules.utilities.Constants;
+import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.ActivityHealthEducationBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -27,6 +31,11 @@ public class HealthEducation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityHealthEducationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.white));
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
         setListeners();
         getEduData();
 

@@ -107,11 +107,17 @@
             android:exported="false"
             android:parentActivityName=".AllModules.HealthHome"
             android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+
+        <activity android:name=".AllModules.GroupchatActivity"
+            android:exported="false"
+            android:parentActivityName=".AllModules.HealthHome"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
         <activity
             android:name=".AllModules.HealthEducation"
             android:exported="false"
             android:parentActivityName=".AllModules.HealthHome"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+            android:theme="@style/Theme.WIA2007MAD"
+             />
         <activity
             android:name=".AllModules.EmergencyLocator"
             android:exported="false"

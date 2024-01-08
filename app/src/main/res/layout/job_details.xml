@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/ToolbarJobDetails"
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_height="40dp"
+        android:minHeight="?attr/actionBarSize">
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingEnd="10dp"
+            android:scrollIndicators="none">
+
+            <TextView
+                android:id="@+id/jobdetailstitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/inter_semibold"
+                android:hint="Details?"
+                android:paddingTop="5dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+        </HorizontalScrollView>
+    </androidx.appcompat.widget.Toolbar>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitCenter"
+        android:paddingTop="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:id="@+id/jobdetailsimageview"/>
+
+    <TextView
+        android:id="@+id/jobdetailsdeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/inter"
+        android:hint="Deadline :"
+        android:textSize="18dp" />
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="10dp">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:fadeScrollbars="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/jobdetailscontent"
+                />
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/applynowbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Apply Now"
+        android:textColor="@color/white"
+        android:textSize="17dp"
+        app:cornerRadius="5dp" />
+</LinearLayout>

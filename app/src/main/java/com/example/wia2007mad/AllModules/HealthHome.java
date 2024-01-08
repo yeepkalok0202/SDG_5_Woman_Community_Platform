@@ -91,7 +91,18 @@ public class HealthHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        binding.btnCommunityChatroom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent (HealthHome.this, GroupchatActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
+
 
 
 //    public boolean onOptionsItemSelected(MenuItem item){

@@ -6,6 +6,8 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="online">Online</string>
+
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -307,4 +309,8 @@ Through this approach, we navigate the challenge without delving into mathematic
     <!-- TODO: Remove or change this placeholder text -->
     <string name="google_map_key">AIzaSyD75uNNaoCnlpAaskEv0xnYaO5IQPRirjk</string>
     <!-- resources sharing hub-->
+    <string name="create_a_resume_to_land_your_next_job_we_have_developed_a_resume_builder_based_on_feedback_from_thousands_of_users_recruiter_expertise_stellar_template_design_and_the_best_hiring_practices_the_goal_is_simple_help_you_land_that_dream_job_interview_get_an_advantage_in_the_modern_professional_environment">Create a resume to land your next job We have developed a resume builder based on feedback from thousands of users, recruiter expertise, stellar template design and the best hiring practices. The goal is simple: help you land that dream job interview! Get an advantage in the modern professional environment.</string>
+    <string name="resumedesc">1. Look for keywords in the job posting\n2. Assemble your job history and skills\n3. Include only relevant information</string>
+
 </resources>
+

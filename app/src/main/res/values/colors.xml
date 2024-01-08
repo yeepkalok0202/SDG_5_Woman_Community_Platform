@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="grey">#4C4747</color>
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#673AB7</color>
     <color name="purplelight">#9E69FB</color>
@@ -14,4 +13,11 @@
     <color name="selected_icon_color">#d3d3d3</color>
     <color name="darkergrayshade">#616161</color>
     <color name="darkblue">#222B45</color>
+    <color name="light_grey">#F5F5F5</color>
+    <color name="dark_grey">#333333</color>
+    <color name="accent_color">#3498DB</color>
+    <color name = "transparent">#000000</color>
+    <color name = "primary">#1C2E46</color>
+    <color name = "secondary_text">#757575</color>
+    <color name = "grey">#808080</color>
 </resources>

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AllModules.JobPortal">
+
+    <ImageView
+        android:id="@+id/TVTitleJobPortal"
+        android:layout_width="305dp"
+        android:layout_height="108dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/are_you_searching_for_a_job_" />
+
+    <ImageView
+        android:id="@+id/JobVacanciesContainer"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/rectangle_12" />
+
+    <TextView
+        android:id="@+id/TitleVacancy"
+        android:layout_width="268.84dp"
+        android:layout_height="28.21dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="175dp"
+        android:shadowColor="@color/black"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="17dp"
+        android:text="Most Popular Vacancies" />
+
+    <TextView
+        android:id="@+id/Job1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="210dp"
+        android:fontFamily="@font/inter_medium"
+        android:shadowColor="@color/black"
+        android:text="Data Scientist" />
+
+    <TextView
+        android:id="@+id/Position1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="230dp"
+        android:fontFamily="@font/inter_medium"
+        android:shadowColor="@color/black"
+        android:text="28,200 open positions" />
+
+    <TextView
+        android:id="@+id/Job2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="270dp"
+        android:shadowColor="@color/black"
+        android:fontFamily="@font/inter_medium"
+        android:text="Software Developer" />
+
+    <TextView
+        android:id="@+id/Position2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="290dp"
+        android:fontFamily="@font/inter_medium"
+        android:shadowColor="@color/black"
+        android:text="43,359 open positions" />
+
+    <TextView
+        android:id="@+id/Job3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="210dp"
+        android:fontFamily="@font/inter_medium"
+        android:shadowColor="@color/black"
+        android:text="Financial Manager" />
+
+    <TextView
+        android:id="@+id/Position3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="230dp"
+        android:fontFamily="@font/inter_medium"
+        android:shadowColor="@color/black"
+        android:text="10,809 open positions" />
+
+    <TextView
+        android:id="@+id/Job4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="270dp"
+        android:shadowColor="@color/black"
+        android:fontFamily="@font/inter_medium"
+        android:text="Project Manager" />
+
+    <TextView
+        android:id="@+id/Position4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="290dp"
+        android:fontFamily="@font/inter_medium"
+        android:shadowColor="@color/black"
+        android:text="12,342 open positions" />
+
+
+    <ImageButton
+        android:id="@+id/MoreJob"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="165dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/group__1_"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/SkillBuildingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="575dp"
+        android:shadowColor="@color/black"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="18dp"
+        android:text="Skill Building Workshop" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalscrollviewskillbuilding"
+        android:layout_width="368dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="610dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CreateResume">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/skillcardview1"
+                    android:layout_width="260dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:outlineAmbientShadowColor="#000000"
+                    android:outlineSpotShadowColor="#000000"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="15dp"
+                    android:onClick="onCardClicked"
+                    tools:ignore="ExtraText">
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/skillimage1"
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/tellmeaboutyourself_thumbnail" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="5dp">
+
+                            <TextView
+                                android:id="@+id/skillauthor1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_semibold"
+                                android:hint="Author1"
+                                android:text="@string/virtualauthor1"
+                                android:maxLength="20"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="2dp"
+                                android:textSize="11dp" />
+
+                            <TextView
+                                android:id="@+id/skilltitle1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/inter_semibold"
+                                android:hint="Title1"
+                                android:maxLines="3"
+                                android:paddingEnd="40dp"
+                                android:text="@string/virtualtitle1"
+                                android:textSize="12dp"
+                                tools:ignore="TextSizeCheck" />
+
+                            <TextView
+                                android:id="@+id/skillcontent1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="5"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="5dp"
+                                android:text="@string/virtualdescription1"
+                                android:textSize="9dp"
+                                tools:ignore="TextSizeCheck" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/skillcardview2"
+                android:layout_width="260dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:outlineAmbientShadowColor="#000000"
+                android:outlineSpotShadowColor="#000000"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                android:onClick="onCardClicked2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/skillimage2"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/howtoaceaninterview_thumbnail" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="5dp">
+
+                        <TextView
+                            android:id="@+id/skillauthor2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_semibold"
+                            android:maxLines="1"
+                            android:maxLength="20"
+                            android:ellipsize="end"
+                            android:hint="Author2"
+                            android:text="@string/virtualauthor2"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="2dp"
+                            android:textSize="11dp" />
+
+                        <TextView
+                            android:id="@+id/skilltitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_semibold"
+                            android:text="@string/virtualtitle2"
+                            android:maxLines="3"
+                            android:ellipsize="end"
+                            android:hint="Title2"
+                            android:paddingEnd="40dp"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/skillcontent2"
+                            android:paddingTop="5dp"
+                            android:text="@string/virtualdescription2"
+                            android:maxLines="5"
+                            android:ellipsize="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="5dp"
+                            android:textSize="9dp" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/skillcardview3"
+                android:layout_width="260dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:outlineAmbientShadowColor="#000000"
+                android:outlineSpotShadowColor="#000000"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                android:onClick="onCardClicked3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/skillimage3"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/weakness_thumbnail" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="5dp">
+
+                        <TextView
+                            android:id="@+id/skillauthor3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_semibold"
+                            android:hint="Author3"
+                            android:paddingTop="5dp"
+                            android:text="@string/virtualauthor3"
+                            android:paddingBottom="2dp"
+                            android:textSize="11dp" />
+
+                        <TextView
+                            android:id="@+id/skilltitle3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_semibold"
+                            android:hint="Title3"
+                            android:text="@string/virtualtitle3"
+                            android:maxLines="3"
+                            android:ellipsize="end"
+                            android:paddingEnd="40dp"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/skillcontent3"
+                            android:layout_width="wrap_content"
+                            android:paddingTop="5dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/virtualdescription3"
+                            android:maxLines="5"
+                            android:ellipsize="end"
+                            android:paddingEnd="5dp"
+                            android:textSize="9dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <ImageButton
+        android:id="@+id/MoreSkill"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="565dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/group__1_"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/CreateResume"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="350dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/inter_semibold"
+        android:scaleType="fitCenter"
+        android:src="@drawable/createresumebutton1"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</RelativeLayout>
