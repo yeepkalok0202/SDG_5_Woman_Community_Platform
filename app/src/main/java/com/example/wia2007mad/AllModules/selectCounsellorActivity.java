@@ -30,6 +30,9 @@ public class selectCounsellorActivity extends AppCompatActivity implements Couns
 
     private ActivitySelectCounsellorBinding binding;
     private PreferenceManager preferenceManager;
+    // Initialize the users list outside of the query
+    List<Counsellor> users = new ArrayList<>();
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +46,10 @@ public class selectCounsellorActivity extends AppCompatActivity implements Couns
     }
 
     private void setListeners(){
-        binding.imageBack.setOnClickListener(view ->
-                onBackPressed());
-                //startActivity(new Intent(getApplicationContext(), recentConversation.class)));
+        binding.imageBack.setOnClickListener(view ->{
+                onBackPressed();
+                finish();
+        });
     }
 
     private void getUsers() {
@@ -55,6 +59,8 @@ public class selectCounsellorActivity extends AppCompatActivity implements Couns
         // Retrieve user role from PreferenceManager
         String userRole = preferenceManager.getString(Constants.KEY_ROLE);
 
+        users.clear();
+
         // Prepare your query based on the user role
         Query query;
         if ("user".equals(userRole)) {
@@ -63,18 +69,18 @@ public class selectCounsellorActivity extends AppCompatActivity implements Couns
                     .whereEqualTo("role", "counsellor");
         } else {
             // If the role is 'counsellor', fetch 'user' list
+//            query = database.collection(Constants.KEY_COLLECTION_USERS)
+//                    .whereNotEqualTo("role", "counsellor");
             query = database.collection(Constants.KEY_COLLECTION_USERS)
-                    .whereNotEqualTo("role", "counsellor");
+                    .whereEqualTo("role", "user");
         }
-
-        // Initialize the users list outside of the query
-        List<Counsellor> users = new ArrayList<>();
 
         // Execute the query
         query.get().addOnCompleteListener(task -> {
             loading(false);
             String currentUserId = preferenceManager.getString(Constants.KEY_USER_ID);
             if (task.isSuccessful() && task.getResult() != null) {
+                int docSize = task.getResult().size(); // Total documents size
                 for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
                     if (currentUserId.equals(queryDocumentSnapshot.getId())) {
                         continue;
@@ -96,21 +102,21 @@ public class selectCounsellorActivity extends AppCompatActivity implements Couns
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             if (dataSnapshot.exists()) {
                                 String imageUrl = dataSnapshot.getValue(String.class);
-                                user.image = imageUrl; // Set the image URL
+                                user.image = imageUrl; // Set the image URL if it exists
+                            } else {
+                                user.image = null; // Set the image URL to null if not found
+                            }
 
-                                // Add the user to the list after retrieving the image URL
-                                users.add(user);
+                            // Add the user to the list regardless of the image URL
+                            users.add(user);
+                            count++;
 
-                                // Check if all users have been added, then update the RecyclerView
-                                if (users.size() == task.getResult().size() - 1) {
-                                    if (users.size() > 0) {
-                                        CounsellorsAdapter usersAdapter = new CounsellorsAdapter(users, selectCounsellorActivity.this);
-                                        binding.counsellorsRecyclerView.setAdapter(usersAdapter);
-                                        binding.counsellorsRecyclerView.setVisibility(View.VISIBLE);
-                                    } else {
-                                        showErrorMessage();
-                                    }
-                                }
+                            // Check if all users have been added, then update the RecyclerView
+//                            if (users.size() == task.getResult().size() - 1) {
+//                                updateRecyclerView();
+//                            }
+                            if(count==docSize){
+                                updateRecyclerView();
                             }
                         }
 
@@ -124,6 +130,15 @@ public class selectCounsellorActivity extends AppCompatActivity implements Couns
         });
     }
 
+    private void updateRecyclerView() {
+        if (users.size() > 0) {
+            CounsellorsAdapter usersAdapter = new CounsellorsAdapter(users, selectCounsellorActivity.this);
+            binding.counsellorsRecyclerView.setAdapter(usersAdapter);
+            binding.counsellorsRecyclerView.setVisibility(View.VISIBLE);
+        } else {
+            showErrorMessage();
+        }
+    }
 
 
 
