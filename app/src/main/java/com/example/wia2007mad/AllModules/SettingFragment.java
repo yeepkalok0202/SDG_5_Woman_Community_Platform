@@ -48,9 +48,31 @@ public class SettingFragment extends Fragment {
         binding.logoutbuttoninsetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPopup("Sign out","Continue this action?" );
-                if(quit){
-                    Toast.makeText(getContext(),"Signing you out...",Toast.LENGTH_LONG).show();
+                // Create the dialog using 'getContext()' for the activity context
+                final Dialog dialog = new Dialog(getContext());
+                dialog.setContentView(R.layout.overlay_confirm);
+
+                // Initialize the views
+                TextView cancel = dialog.findViewById(R.id.popupcancel);
+                TextView ok = dialog.findViewById(R.id.popupok);
+                TextView title = dialog.findViewById(R.id.popuptitle);
+                TextView content = dialog.findViewById(R.id.popupcontent);
+
+                // Set text
+                title.setText("Sign out");
+                content.setText("Continue this action?");
+
+                // Set the close button action
+                cancel.setOnClickListener(v1 -> {
+                    dialog.dismiss();
+                    quit = false;
+                });
+                ok.setOnClickListener(v1 -> {
+                    dialog.dismiss();
+                    quit = true;
+
+                    // Perform sign-out logic here
+                    Toast.makeText(getContext(), "Signing you out...", Toast.LENGTH_LONG).show();
                     new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -59,51 +81,29 @@ public class SettingFragment extends Fragment {
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
 
-                            SharedPreferences sharedPreferences= getActivity().getSharedPreferences("AppPrefs", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor editor= sharedPreferences.edit();
-                            editor.putBoolean("isLoggedOut",true);
+                            SharedPreferences sharedPreferences = getActivity().getSharedPreferences("AppPrefs", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putBoolean("isLoggedOut", true);
                             editor.apply();
                             // Finish the current activity
                             getActivity().finish();
                         }
-                    }, 2000);
+                    }, 100);
+                });
+
+                // Set the dialog background to transparent
+                if (dialog.getWindow() != null) {
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 }
-            }});
+
+                // Show the popup dialog
+                dialog.show();
+            }
+        });
+
         return binding.getRoot();
 
     }
 
-    private void showPopup(String title1, String content1) {
-        // Create the dialog using 'this' for the activity context
-        final Dialog dialog = new Dialog(getContext());
-        dialog.setContentView(R.layout.overlay_confirm);
 
-        // Initialize the views
-        TextView cancel = dialog.findViewById(R.id.popupcancel);
-        TextView ok = dialog.findViewById(R.id.popupok);
-        TextView title = dialog.findViewById(R.id.popuptitle);
-        TextView content = dialog.findViewById(R.id.popupcontent);
-
-        // Set text
-        title.setText(title1);
-        content.setText(content1);
-
-        // Set the close button action
-        cancel.setOnClickListener(v -> {
-            dialog.dismiss();
-            quit = false;
-        });
-        ok.setOnClickListener(v -> {
-            dialog.dismiss();
-            quit = true;
-        });
-
-        // Set the dialog background to transparent
-        if (dialog.getWindow() != null) {
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        }
-
-        // Show the popup dialog
-        dialog.show();
-    }
 }

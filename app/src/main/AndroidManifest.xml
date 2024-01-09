@@ -160,22 +160,28 @@
         </activity>
 
         <activity android:name=".AllModules.JobDetails"
-            android:parentActivityName=".AllModules.JobPortal"></activity>
+            android:parentActivityName=".AllModules.JobPortal">
+        </activity>
 
         <activity android:name=".AllModules.Skill"
-            android:parentActivityName=".AllModules.JobPortal"></activity>
+            android:parentActivityName=".AllModules.JobPortal">
+        </activity>
 
         <activity android:name=".AllModules.SkillDetails"
-            android:parentActivityName=".AllModules.JobPortal"></activity>
+            android:parentActivityName=".AllModules.JobPortal">
+        </activity>
         
         <activity android:name=".AllModules.ResumeBuilderPg1"
-            android:parentActivityName=".AllModules.JobPortal"></activity>
+            android:parentActivityName=".AllModules.JobPortal">
+        </activity>
 
         <activity android:name=".AllModules.ResumeBuilderPg2"
-            android:parentActivityName=".AllModules.JobPortal"></activity>
+            android:parentActivityName=".AllModules.JobPortal">
+        </activity>
 
         <activity android:name=".AllModules.ResumeBuilderFinalPg"
-            android:parentActivityName=".AllModules.JobPortal"></activity>
+            android:parentActivityName=".AllModules.JobPortal">
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

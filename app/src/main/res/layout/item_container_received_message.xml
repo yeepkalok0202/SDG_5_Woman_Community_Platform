@@ -6,7 +6,22 @@
     android:layout_marginTop="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<com.makeramen.roundedimageview.RoundedImageView
+    <TextView
+        android:id="@+id/usernameinchat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="gggg"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/textMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
     android:id ="@+id/imageProfile"
     android:layout_width="25dp"
     android:layout_height="25dp"
@@ -17,6 +32,7 @@
     app:riv_oval="true"/>
 
     <TextView
+        android:layout_marginTop="25dp"
         android:id ="@+id/textMessage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

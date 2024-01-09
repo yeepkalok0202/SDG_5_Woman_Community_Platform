@@ -58,7 +58,7 @@ public class GroupchatActivity extends AppCompatActivity {
         chatMessages = new ArrayList<>();
         chatAdapter = new ChatAdapter(
                 chatMessages,
-               null,
+                null,
                 preferenceManager.getString(Constants.KEY_USER_ID)
         );
         binding.chatRecyclerView.setAdapter(chatAdapter);
@@ -99,7 +99,7 @@ public class GroupchatActivity extends AppCompatActivity {
                 }
 
             }
-                chatAdapter.notifyDataSetChanged();
+            chatAdapter.notifyDataSetChanged();
 
             int targetPosition = chatMessages.size() - 1;
             if (targetPosition >= 0) {
@@ -112,7 +112,7 @@ public class GroupchatActivity extends AppCompatActivity {
 
     };
 
-//    private String loadSenderProfilePicture(String senderId) {
+    //    private String loadSenderProfilePicture(String senderId) {
 //        database.collection(Constants.KEY_COLLECTION_USERS)
 //                .document(senderId)
 //                .get()
@@ -196,7 +196,7 @@ public class GroupchatActivity extends AppCompatActivity {
             // If you have a specific use for the conversationId, you might set it as a field in your activity/fragment
             // conversationId = messageId;
         } else {
-          Toast.makeText(getApplicationContext(),"No Group Messages", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"No Group Messages", Toast.LENGTH_LONG).show();
         }
     };
 

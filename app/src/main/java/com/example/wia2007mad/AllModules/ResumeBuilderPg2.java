@@ -74,4 +74,10 @@ public class ResumeBuilderPg2 extends AppCompatActivity {
 
 
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        // You can add any additional logic here if needed.
+    }
+
 }

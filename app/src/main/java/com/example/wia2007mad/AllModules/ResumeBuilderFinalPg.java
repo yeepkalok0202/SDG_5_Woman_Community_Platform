@@ -2,6 +2,7 @@ package com.example.wia2007mad.AllModules;
 
 import android.Manifest;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -94,9 +95,7 @@ public class ResumeBuilderFinalPg extends AppCompatActivity {
             BackToHome.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    for(int i=0;i<4;i++){
-                        finish();
-                    }
+                    onBackPressed();
                 }
             });
         }
@@ -167,4 +166,11 @@ public class ResumeBuilderFinalPg extends AppCompatActivity {
         return result;
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ResumeBuilderFinalPg.this, JobPortal.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+    }
 }

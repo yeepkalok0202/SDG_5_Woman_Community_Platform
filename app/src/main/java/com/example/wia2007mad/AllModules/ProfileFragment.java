@@ -148,7 +148,6 @@ public class ProfileFragment extends Fragment {
         databaseReference = firebaseDatabase.getReference("users");
 
         Query query = databaseReference.child(firebaseUser.getUid());
-        System.out.println(firebaseUser.getUid());
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
