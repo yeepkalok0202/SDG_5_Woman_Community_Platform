@@ -133,7 +133,7 @@ public class Skill extends AppCompatActivity implements SkillRecyclerViewInterfa
         progressDialog.setCancelable(true); // Make it non-cancelable
         progressDialog.show();
         firebaseFirestore=FirebaseFirestore.getInstance();
-        for(int i=1;i<=4;i++){
+        for(int i=1;i<=16;i++){
             final int finalI = i;
             String documentID="skillbuildingworkshop"+i;
             documentReference=firebaseFirestore.collection("SkillBuildingWorkshop").document(documentID);

@@ -137,7 +137,7 @@ public class Job extends AppCompatActivity implements JobRecyclerViewInterface{
         progressDialog.setCancelable(true); // Make it non-cancelable
         progressDialog.show();
         firebaseFirestore=FirebaseFirestore.getInstance();
-        for(int i=1;i<=4;i++){
+        for(int i=1;i<=16;i++){
             final int finalI = i;  // Declare 'finalI' as a final copy of 'i'
             String documentID="joblist"+i;
             documentReference=firebaseFirestore.collection("Joblist").document(documentID);
@@ -150,7 +150,7 @@ public class Job extends AppCompatActivity implements JobRecyclerViewInterface{
                             originallist.add(jobModel);
                         }
                     }
-                    if (finalI== 4) {
+                    if (finalI== 16) {
                         updateRecyclerView();
                         if (progressDialog.isShowing()) {
                             progressDialog.dismiss();

@@ -95,7 +95,7 @@ public class HealthHome extends AppCompatActivity {
         binding.btnCommunityChatroom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (HealthHome.this, GroupchatActivity.class);
+                Intent intent = new Intent (HealthHome.this, GroupChatFirstPage.class);
                 startActivity(intent);
             }
         });

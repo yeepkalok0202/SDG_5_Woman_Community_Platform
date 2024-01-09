@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".AllModules.ResumeBuilderPg1">
 
     <TextView
@@ -15,7 +16,7 @@
         android:fontFamily="@font/outfitbold"
         android:text="Resume Builder"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,7 +41,7 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -51,27 +52,27 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/outfitregular"
         android:lineHeight="19sp"
+        android:textAlignment="center"
         android:text="@string/create_a_resume_to_land_your_next_job_we_have_developed_a_resume_builder_based_on_feedback_from_thousands_of_users_recruiter_expertise_stellar_template_design_and_the_best_hiring_practices_the_goal_is_simple_help_you_land_that_dream_job_interview_get_an_advantage_in_the_modern_professional_environment"
         android:textColor="@color/black"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/submitBtn"
-        android:layout_width="187dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginTop="4dp"
-        android:background="@color/darkblue"
         android:backgroundTint="@color/darkblue"
-        android:fontFamily="@font/interblack"
-        android:text="Build Your Resume"
+        android:fontFamily="@font/intersemibold"
+        android:text="Build Your \nSimple Resume Now!"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="16sp"
-        android:foreground="?android:attr/selectableItemBackground"
+        android:textSize="20sp"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +88,7 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/submitBtn" />
 
@@ -106,19 +107,21 @@
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <ImageButton
         android:id="@+id/backBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="35dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back"
+        app:srcCompat="@drawable/realarrowleft"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

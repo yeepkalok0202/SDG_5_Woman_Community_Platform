@@ -37,6 +37,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AllModules.GroupChatFirstPage"
+            android:parentActivityName=".AllModules.HealthHome"></activity>
         <activity android:name=".AllModules.Login"></activity>
         <activity android:name=".AllModules.MainHomePage">
         </activity>
@@ -73,11 +75,7 @@
             android:parentActivityName=".AllModules.Workshop"
             android:configChanges="orientation|screenSize">
         </activity>
-        <activity
-            android:name=".AllModules.web"
-            android:exported="false">
 
-        </activity>
         <activity
             android:name=".AllModules.ChatActivity"
             android:exported="false"
@@ -106,17 +104,17 @@
             android:name=".AllModules.CounsellingService"
             android:exported="false"
             android:parentActivityName=".AllModules.HealthHome"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+             />
 
         <activity android:name=".AllModules.GroupchatActivity"
             android:exported="false"
-            android:parentActivityName=".AllModules.HealthHome"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+            android:parentActivityName=".AllModules.GroupChatFirstPage"
+            />
         <activity
             android:name=".AllModules.HealthEducation"
             android:exported="false"
             android:parentActivityName=".AllModules.HealthHome"
-            android:theme="@style/Theme.WIA2007MAD"
+
              />
         <activity
             android:name=".AllModules.EmergencyLocator"
@@ -127,7 +125,7 @@
             android:name=".AllModules.HealthHome"
             android:exported="false"
             android:parentActivityName=".AllModules.MainHomePage"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+             />
 
         <activity android:name=".AllModules.socialmarket.Home"
             android:parentActivityName=".AllModules.MainHomePage">

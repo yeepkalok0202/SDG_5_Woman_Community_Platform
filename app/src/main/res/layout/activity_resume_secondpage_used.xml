@@ -1,282 +1,320 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ConstraintLayout"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingHorizontal="20dp"
-        tools:context=".AllModules.ResumeBuilderPg2">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginStart="32dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/realarrowleft"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            />
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="147dp"
+            android:layout_width="wrap_content"
             android:layout_height="34dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="28dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="85dp"
             android:fontFamily="@font/outfitbold"
             android:text="Resume Builder"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/outfitbold"
-            android:text="Fill in your details"
+            android:text="Fill in your details..."
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            />
+    </LinearLayout>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:fontFamily="@font/outfitregular"
-            android:text="Name"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/ETInputName"
-            android:layout_width="337sp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="19dp"
-            android:ems="10"
-            android:fontFamily="@font/outfitregular"
-            android:hint="Fill in your name"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="335dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="21dp"
-            android:fontFamily="@font/outfitregular"
-            android:text="Contact details (eg: email, phone number, house address)"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETInputName" />
-
-        <EditText
-            android:id="@+id/ETInputContact"
-            android:layout_width="337sp"
-            android:layout_height="wrap_content"
-
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="19dp"
-            android:ems="10"
-            android:fontFamily="@font/outfitregular"
-            android:hint="Fill in your contact details here"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:fontFamily="@font/outfitregular"
-            android:text="About Me"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETInputContact" />
-
-        <EditText
-            android:id="@+id/ETInputAboutMe"
-            android:layout_width="337sp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-
-            android:layout_marginEnd="19dp"
-            android:ems="10"
-            android:fontFamily="@font/outfitregular"
-            android:gravity="start|top"
-            android:hint="Describe yourself"
-            android:inputType="textMultiLine"
-            android:minHeight="48dp"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:fontFamily="@font/outfitregular"
-            android:text="Skills"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETInputAboutMe" />
-
-        <EditText
-            android:id="@+id/ETInputSkills"
-            android:layout_width="337sp"
-            android:layout_height="wrap_content"
-
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="19dp"
-            android:ems="10"
-            android:fontFamily="@font/outfitregular"
-            android:gravity="start|top"
-            android:hint="Fill in your skills here"
-            android:inputType="textMultiLine"
-            android:minHeight="48dp"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:fontFamily="@font/outfitregular"
-            android:text="Education"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETInputSkills" />
-
-        <EditText
-            android:id="@+id/ETEducation"
-            android:layout_width="337sp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:ems="10"
-            android:fontFamily="@font/outfitregular"
-            android:gravity="start|top"
-            android:hint="Education History"
-            android:inputType="textMultiLine"
-            android:minHeight="48dp"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:fontFamily="@font/outfitregular"
-            android:text="Working Experience"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETEducation" />
-
-        <EditText
-            android:id="@+id/ETInputWorkXP"
-            android:layout_width="337sp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="19dp"
-            android:ems="10"
-            android:fontFamily="@font/outfitregular"
-            android:gravity="start|top"
-            android:hint="Fill in your work experience here"
-            android:inputType="textMultiLine"
-            android:minHeight="48dp"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:fontFamily="@font/outfitregular"
-            android:text="Language"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETInputWorkXP" />
-
-        <EditText
-            android:id="@+id/ETLanguages"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ConstraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="9dp"
-            android:ems="10"
-            android:fontFamily="@font/outfitregular"
-            android:gravity="start|top"
-            android:hint="Fill in your languages here"
-            android:inputType="textMultiLine"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14"
-            tools:ignore="VisualLintTextFieldSize,TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/backBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="22dp"
-            android:src="@drawable/ic_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            tools:context=".AllModules.ResumeBuilderPg2">
 
 
-        <Button
-            android:id="@+id/submitBtn"
-            android:layout_width="120dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:background="@color/darkblue"
-            android:fontFamily="@font/interblack"
-            android:text="Submit"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETLanguages" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:fontFamily="@font/outfitregular"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-</ScrollView>
+            <EditText
+                android:id="@+id/ETInputName"
+                android:layout_width="337sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="19dp"
+                android:ems="10"
+                android:fontFamily="@font/outfitregular"
+                android:hint="Fill in your name"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="335dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="21dp"
+                android:fontFamily="@font/outfitregular"
+                android:text="Contact details (eg: email, phone number, house address)"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ETInputName" />
+
+            <EditText
+                android:id="@+id/ETInputContact"
+                android:layout_width="337sp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="19dp"
+                android:ems="10"
+                android:fontFamily="@font/outfitregular"
+                android:hint="Fill in your contact details here"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/outfitregular"
+                android:text="About Me"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ETInputContact" />
+
+            <EditText
+                android:id="@+id/ETInputAboutMe"
+                android:layout_width="337sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+
+                android:layout_marginEnd="19dp"
+                android:ems="10"
+                android:fontFamily="@font/outfitregular"
+                android:gravity="start|top"
+                android:hint="Describe yourself"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/outfitregular"
+                android:text="Skills"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ETInputAboutMe" />
+
+            <EditText
+                android:id="@+id/ETInputSkills"
+                android:layout_width="337sp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="19dp"
+                android:ems="10"
+                android:fontFamily="@font/outfitregular"
+                android:gravity="start|top"
+                android:hint="Fill in your skills here"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/outfitregular"
+                android:text="Education"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ETInputSkills" />
+
+            <EditText
+                android:id="@+id/ETEducation"
+                android:layout_width="337sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+                android:ems="10"
+                android:fontFamily="@font/outfitregular"
+                android:gravity="start|top"
+                android:hint="Education History"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/outfitregular"
+                android:text="Working Experience"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ETEducation" />
+
+            <EditText
+                android:id="@+id/ETInputWorkXP"
+                android:layout_width="337sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="19dp"
+                android:ems="10"
+                android:fontFamily="@font/outfitregular"
+                android:gravity="start|top"
+                android:hint="Fill in your work experience here"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/outfitregular"
+                android:text="Language"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ETInputWorkXP" />
+
+            <EditText
+                android:id="@+id/ETLanguages"
+                android:layout_width="337dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="9dp"
+                android:ems="10"
+                android:fontFamily="@font/outfitregular"
+                android:gravity="start|top"
+                android:hint="Fill in your languages"
+                android:inputType="textMultiLine"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView14"
+                tools:ignore="VisualLintTextFieldSize,TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="120dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/darkblue"
+                android:fontFamily="@font/interblack"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ETLanguages" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/submitBtn" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

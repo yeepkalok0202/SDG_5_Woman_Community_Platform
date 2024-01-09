@@ -98,10 +98,9 @@ public class MainHomePage extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (isDefaultFragmentDisplayed()) {
-            showPopup("See you...", "Are you sure you want to quit?");
+            showPopup("We will miss you", "Are you sure you want to quit?");
         } else {
             // Handle other cases or simply call super.onBackPressed()
-            System.out.println("here debug"+isDefaultFragmentDisplayed());
             super.onBackPressed();
         }
     }

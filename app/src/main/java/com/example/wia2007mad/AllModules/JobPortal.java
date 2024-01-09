@@ -20,9 +20,9 @@ public class JobPortal extends AppCompatActivity {
         binding = JobPortalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String article1 = getString(R.string.virtualthumbnaillink1),
-                article2 = getString(R.string.virtualthumbnaillink2),
-                article3 = getString(R.string.virtualthumbnaillink3);
+        String article1 = getString(R.string.skillimagelink1),
+                article2 = getString(R.string.skillimagelink2),
+                article3 = getString(R.string.skillimagelink3);
         Glide.with(this)
                 .load(article1)
                 .into(binding.skillimage1);
@@ -77,7 +77,7 @@ public class JobPortal extends AppCompatActivity {
             }
         });
 
-        binding.CreateResume.setOnClickListener(new View.OnClickListener() {
+        binding.CreateResumebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ResumeBuilderPg1.class);

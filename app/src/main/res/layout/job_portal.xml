@@ -7,14 +7,17 @@
     android:orientation="vertical"
     tools:context=".AllModules.JobPortal">
 
-    <ImageView
+    <TextView
         android:id="@+id/TVTitleJobPortal"
         android:layout_width="305dp"
         android:layout_height="108dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="24dp"
+        android:layout_marginLeft="35dp"
         android:layout_marginTop="45dp"
-        android:src="@drawable/are_you_searching_for_a_job_" />
+        android:text="Seeking for you career?"
+        android:fontFamily="@font/interextrabold"
+        android:textSize="40dp"
+        android:textColor="@color/black"/>
 
     <ImageView
         android:id="@+id/JobVacanciesContainer"
@@ -33,9 +36,10 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="175dp"
         android:shadowColor="@color/black"
-        android:fontFamily="@font/inter_semibold"
-        android:textSize="17dp"
-        android:text="Most Popular Vacancies" />
+        android:fontFamily="@font/interbold"
+        android:textSize="20dp"
+        android:text="Female Friendly Vacancies"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/Job1"
@@ -120,28 +124,28 @@
 
     <ImageButton
         android:id="@+id/MoreJob"
-        android:layout_width="55dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="165dp"
+        android:layout_marginLeft="330dp"
+        android:layout_marginTop="175dp"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:foreground="?android:attr/selectableItemBackground"
-        android:padding="16dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/group__1_"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_arrow"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/SkillBuildingTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="575dp"
         android:shadowColor="@color/black"
-        android:fontFamily="@font/inter_semibold"
-        android:textSize="18dp"
-        android:text="Skill Building Workshop" />
+        android:fontFamily="@font/interbold"
+        android:textSize="20dp"
+        android:text="Skill Building Workshop"
+        android:textColor="@color/black"/>
 
     <HorizontalScrollView
         android:id="@+id/horizontalscrollviewskillbuilding"
@@ -157,7 +161,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/skillcardview1"
@@ -194,12 +199,13 @@
                             android:paddingRight="5dp">
 
                             <TextView
+                                android:layout_marginTop="35dp"
                                 android:id="@+id/skillauthor1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/inter_semibold"
                                 android:hint="Author1"
-                                android:text="@string/virtualauthor1"
+                                android:text="@string/skillauthor1"
                                 android:maxLength="20"
                                 android:maxLines="1"
                                 android:ellipsize="end"
@@ -216,20 +222,8 @@
                                 android:hint="Title1"
                                 android:maxLines="3"
                                 android:paddingEnd="40dp"
-                                android:text="@string/virtualtitle1"
+                                android:text="@string/skilltopic1"
                                 android:textSize="12dp"
-                                tools:ignore="TextSizeCheck" />
-
-                            <TextView
-                                android:id="@+id/skillcontent1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:ellipsize="end"
-                                android:maxLines="5"
-                                android:paddingTop="5dp"
-                                android:paddingEnd="5dp"
-                                android:text="@string/virtualdescription1"
-                                android:textSize="9dp"
                                 tools:ignore="TextSizeCheck" />
 
 
@@ -274,11 +268,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_semibold"
+                            android:layout_marginTop="30dp"
                             android:maxLines="1"
                             android:maxLength="20"
                             android:ellipsize="end"
                             android:hint="Author2"
-                            android:text="@string/virtualauthor2"
+                            android:text="@string/skillauthor2"
                             android:paddingTop="5dp"
                             android:paddingBottom="2dp"
                             android:textSize="11dp" />
@@ -288,23 +283,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_semibold"
-                            android:text="@string/virtualtitle2"
+                            android:text="@string/skilltopic2"
                             android:maxLines="3"
                             android:ellipsize="end"
                             android:hint="Title2"
                             android:paddingEnd="40dp"
                             android:textSize="12dp" />
-
-                        <TextView
-                            android:id="@+id/skillcontent2"
-                            android:paddingTop="5dp"
-                            android:text="@string/virtualdescription2"
-                            android:maxLines="5"
-                            android:ellipsize="end"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingEnd="5dp"
-                            android:textSize="9dp" />
 
 
                     </LinearLayout>
@@ -346,13 +330,14 @@
                         android:paddingRight="5dp">
 
                         <TextView
+                            android:layout_marginTop="30dp"
                             android:id="@+id/skillauthor3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_semibold"
                             android:hint="Author3"
                             android:paddingTop="5dp"
-                            android:text="@string/virtualauthor3"
+                            android:text="@string/skillauthor3"
                             android:paddingBottom="2dp"
                             android:textSize="11dp" />
 
@@ -362,22 +347,11 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_semibold"
                             android:hint="Title3"
-                            android:text="@string/virtualtitle3"
+                            android:text="@string/skilltopic3"
                             android:maxLines="3"
                             android:ellipsize="end"
                             android:paddingEnd="40dp"
                             android:textSize="12dp" />
-
-                        <TextView
-                            android:id="@+id/skillcontent3"
-                            android:layout_width="wrap_content"
-                            android:paddingTop="5dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/virtualdescription3"
-                            android:maxLines="5"
-                            android:ellipsize="end"
-                            android:paddingEnd="5dp"
-                            android:textSize="9dp" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -388,29 +362,38 @@
 
     <ImageButton
         android:id="@+id/MoreSkill"
-        android:layout_width="55dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="565dp"
+        android:layout_marginLeft="325dp"
+        android:layout_marginTop="575dp"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:foreground="?android:attr/selectableItemBackground"
-        android:padding="16dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/group__1_"
+        android:src="@drawable/ic_arrow"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-    <ImageButton
+    <androidx.cardview.widget.CardView
+        android:layout_below="@id/JobVacanciesContainer"
         android:id="@+id/CreateResume"
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
-        android:adjustViewBounds="true"
-        android:background="@android:color/transparent"
-        android:fontFamily="@font/inter_semibold"
-        android:scaleType="fitCenter"
-        android:src="@drawable/createresumebutton1"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:cardCornerRadius="10dp"
+        android:layout_marginLeft="20dp"
+        >
+
+        <ImageButton
+            android:id="@+id/CreateResumebutton"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/inter_semibold"
+            android:scaleType="centerCrop"
+            android:src="@drawable/createresumebutton1"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </androidx.cardview.widget.CardView>
+
 
 </RelativeLayout>

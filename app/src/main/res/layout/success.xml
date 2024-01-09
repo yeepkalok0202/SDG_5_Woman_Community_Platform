@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Success">
+    tools:context=".AllModules.socialmarket.Success">
 
     <TextView
         android:id="@+id/success"
@@ -15,14 +15,14 @@
         android:fontFamily="@font/outfitbold"
         android:text="Success stories"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:layout_alignParentRight="true" />
 
     <ImageButton
         android:id="@+id/arrowleftsuccess"
         android:layout_width="45dp"
         android:layout_height="31dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="55dp"
         android:layout_marginStart="13dp"
         android:background="@null"
         android:scaleX="0.5"

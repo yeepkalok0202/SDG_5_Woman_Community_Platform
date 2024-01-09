@@ -8,46 +8,6 @@
     <string name="previous">Previous</string>
     <string name="online">Online</string>
 
-
-    <string name="lorem_ipsum">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
-        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
-        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
-        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
-        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
-        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
-        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
-        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
-        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
-        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
-        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
-        bibendum, vel congue leo egestas.\n\n
-        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
-        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
-        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
-        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
-        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
-        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
-        est.\n\n
-        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
-        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
-        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
-        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
-        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
-        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
-        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
-        convallis.\n\n
-        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
-        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
-        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
-        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
-        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
-        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
-    </string>
-    <!-- TODO: Remove or change this placeholder text -->
-
-
     <string name="title1">How to edit your profile?</string>
     <string name="title2">How to reset my password</string>
     <string name="title3">Log out of your account</string>
@@ -312,5 +272,20 @@ Through this approach, we navigate the challenge without delving into mathematic
     <string name="create_a_resume_to_land_your_next_job_we_have_developed_a_resume_builder_based_on_feedback_from_thousands_of_users_recruiter_expertise_stellar_template_design_and_the_best_hiring_practices_the_goal_is_simple_help_you_land_that_dream_job_interview_get_an_advantage_in_the_modern_professional_environment">Create a resume to land your next job We have developed a resume builder based on feedback from thousands of users, recruiter expertise, stellar template design and the best hiring practices. The goal is simple: help you land that dream job interview! Get an advantage in the modern professional environment.</string>
     <string name="resumedesc">1. Look for keywords in the job posting\n2. Assemble your job history and skills\n3. Include only relevant information</string>
 
+
+    <!-- workshop mock data-->
+    <string name="skilltopic1">Tell Me About Yourself</string>
+    <string name="skillauthor1">Dan Lok</string>
+    <string name="skillimagelink1">https://i.ytimg.com/vi/5v-wyR5emRw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG\u0026rs=AOn4CLAiMgIICKOrptY4J0vb-qRDVxScEw</string>
+
+    <string name="skilltopic2">Sample answer- What are your weakness?</string>
+    <string name="skillauthor2">Linda Raynier</string>
+    <string name="skillimagelink2">https://i.ytimg.com/vi/2mc2B8NZhvY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG\u0026rs=AOn4CLAYEcStzsSwICWnDaxBsz6vXm2hZg</string>
+
+    <string name="skilltopic3">How to Ace an Interview</string>
+    <string name="skillauthor3">Self Made Millenial</string>
+    <string name="skillimagelink3">https://i.ytimg.com/vi/fYHR0KgnGHU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG\u0026rs=AOn4CLBXIlDKKTsC2qk9I-heKxodkuSOhA</string>
+    <string name="lorem_ipsum">gg
+    </string>
 </resources>
 

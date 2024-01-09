@@ -32,7 +32,7 @@ public class ResumeBuilderFinalPg extends AppCompatActivity {
     TextView skills;
     TextView languages;
     TextView contact;
-    Button btnPDF;
+    Button btnSaveAsImage,BackToHome;
 
     private static final int REQUEST_WRITE_EXTERNAL_STORAGE = 1;
 
@@ -48,7 +48,8 @@ public class ResumeBuilderFinalPg extends AppCompatActivity {
         skills = findViewById(R.id.TVSkills);
         contact = findViewById(R.id.TVContact);
         languages = findViewById(R.id.TVLanguages);
-        btnPDF = findViewById(R.id.BtnPDF);
+        btnSaveAsImage = findViewById(R.id.BtnSaveAsImage);
+        BackToHome=findViewById(R.id.BackToHome);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
@@ -83,10 +84,19 @@ public class ResumeBuilderFinalPg extends AppCompatActivity {
             contact.setText(contactInput);
             languages.setText(languagesInput);
 
-            btnPDF.setOnClickListener(new View.OnClickListener() {
+            btnSaveAsImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     captureAndSaveScreenshotAboveBtn();
+                }
+            });
+
+            BackToHome.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    for(int i=0;i<4;i++){
+                        finish();
+                    }
                 }
             });
         }
@@ -97,9 +107,9 @@ public class ResumeBuilderFinalPg extends AppCompatActivity {
 
         if (bitmap != null) {
             saveBitmapToGallery(bitmap);
-            Toast.makeText(this, "Screenshot above BtnPDF saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Resume saved as picture! Check in gallery.", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Failed to capture screenshot above BtnPDF", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Fail to produce resume picture.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -108,7 +118,7 @@ public class ResumeBuilderFinalPg extends AppCompatActivity {
 
         try {
             int screenWidth = view.getWidth();
-            int btnTop = findViewById(R.id.BtnPDF).getTop();
+            int btnTop = findViewById(R.id.BtnSaveAsImage).getTop();
             int statusBarHeight = getStatusBarHeight();
 
             // Create a bitmap with the height up to the top of BtnPDF, excluding the status bar

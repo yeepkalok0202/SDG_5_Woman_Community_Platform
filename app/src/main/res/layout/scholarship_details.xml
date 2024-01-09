@@ -66,7 +66,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="350dp"
-        android:layout_height="300dp"
+        android:layout_height="340dp"
         android:layout_margin="20dp"
         android:layout_gravity="center"
         app:cardBackgroundColor="@color/white"
@@ -90,12 +90,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/black"
-        android:textColor="@color/white"
         android:fontFamily="@font/semiboldoutfit"
         android:text="Apply Now"
-        app:cornerRadius="5dp"
-        android:textSize="17dp" />
+        android:textColor="@color/white"
+        android:textSize="17dp"
+        app:cornerRadius="5dp" />
 </LinearLayout>

@@ -142,17 +142,17 @@ public class recentConversation extends AppCompatActivity implements ConversionL
                             preferenceManager.putString(Constants.KEY_USER_ID, userId);
 
                             documentReference.update(Constants.KEY_FCM_TOKEN, token)
-                                    .addOnSuccessListener(unused -> showToast("Token updated successfully"))
-                                    .addOnFailureListener(e -> showToast("Unable to update token"));
+                                    .addOnSuccessListener(unused -> showToast("Latest messages synced"))
+                                    .addOnFailureListener(e -> showToast("Connectivity issues, please restart"));
                         } else {
-                            showToast("User not found in Firestore");
+                            showToast("User not found");
                         }
                     })
                     .addOnFailureListener(e -> {
                         showToast("Error retrieving user: " + e.getMessage());
                     });
         } else {
-            showToast("User email not found in SharedPreferences");
+            showToast("User email not found");
         }
     }
 
