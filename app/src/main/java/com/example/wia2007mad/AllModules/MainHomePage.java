@@ -128,6 +128,7 @@ public class MainHomePage extends AppCompatActivity {
         ok.setOnClickListener(v -> {
             dialog.dismiss();
             quit = true;
+            finishAffinity();
             super.onBackPressed();
         });
 

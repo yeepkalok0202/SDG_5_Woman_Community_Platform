@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.wia2007mad.AllModules.NormalUser;
+import com.example.wia2007mad.AllModules.User;
 import com.example.wia2007mad.AllModules.model.ChatMessage;
 import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.ItemContainerReceivedMessageBinding;
@@ -102,7 +102,7 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                     if(documentSnapshot.exists()){
-                        NormalUser user=documentSnapshot.toObject(NormalUser.class);
+                        User user=documentSnapshot.toObject(User.class);
                         if(user!=null){
                             binding.usernameinchat.setText(user.getUsername());
                         }
@@ -131,7 +131,7 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                     if(documentSnapshot.exists()){
-                        NormalUser user=documentSnapshot.toObject(NormalUser.class);
+                        User user=documentSnapshot.toObject(User.class);
                         if(user!=null){
                             binding.usernameinchat.setText(user.getUsername());
                         }

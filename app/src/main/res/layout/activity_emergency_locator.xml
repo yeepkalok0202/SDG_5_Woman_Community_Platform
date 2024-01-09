@@ -7,16 +7,17 @@
     tools:context=".AllModules.EmergencyLocator"
     android:layout_margin = "10dp">
 
-    <ImageButton
+    <ImageView
         android:id="@+id/BtnBackLocator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="5dp"
         android:background="@null"
         android:contentDescription="Back"
         android:minWidth="48dp"
         android:minHeight="48dp"
-        android:src="@drawable/back" />
+        android:src="@drawable/arrow_left" />
 
     <TextView
         android:id = "@+id/emergencyTxt"

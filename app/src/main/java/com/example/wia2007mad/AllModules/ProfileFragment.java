@@ -12,18 +12,13 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,18 +28,12 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.DataSource;
-import com.bumptech.glide.load.engine.GlideException;
-import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.target.Target;
 import com.example.wia2007mad.R;
-import com.example.wia2007mad.databinding.DialogUpdateProfileBinding;
 import com.example.wia2007mad.databinding.FragmentProfileBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.EmailAuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -57,7 +46,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.auth.User;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -119,7 +107,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
-                    NormalUser user=documentSnapshot.toObject(NormalUser.class);
+                    User user=documentSnapshot.toObject(User.class);
                     if(user!=null){
                         String profileusername=binding.profileusername.getText().toString()+" "+user.getUsername();
                         binding.profileusername.setText(profileusername);
@@ -127,6 +115,7 @@ public class ProfileFragment extends Fragment {
                         binding.profileemail.setText(profileemail);
                         String profilephonenumber=binding.profilephonenumber.getText().toString()+" "+user.getPhone_number();
                         binding.profilephonenumber.setText(profilephonenumber);
+                        binding.role.setText(user.getRole().toUpperCase());
                     }
                 }
             }

@@ -37,9 +37,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AllModules.RoleChoosing">
+
+        </activity>
         <activity android:name=".AllModules.GroupChatFirstPage"
-            android:parentActivityName=".AllModules.HealthHome"></activity>
-        <activity android:name=".AllModules.Login"></activity>
+            android:parentActivityName=".AllModules.HealthHome">
+        </activity>
+        <activity android:name=".AllModules.Login"
+            android:parentActivityName=".AllModules.RoleChoosing">
+
+        </activity>
+        <activity android:name=".AllModules.RegisterAsCounsellorInformation"
+            android:parentActivityName=".AllModules.RoleChoosing">
+
+        </activity>
         <activity android:name=".AllModules.MainHomePage">
         </activity>
 

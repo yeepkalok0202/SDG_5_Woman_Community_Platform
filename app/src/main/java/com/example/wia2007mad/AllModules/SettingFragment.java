@@ -77,7 +77,7 @@ public class SettingFragment extends Fragment {
                         @Override
                         public void run() {
                             // Navigate back to the LoginActivity (Main Activity)
-                            Intent intent = new Intent(getActivity(), Login.class);
+                            Intent intent = new Intent(getActivity(), RoleChoosing.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
 
