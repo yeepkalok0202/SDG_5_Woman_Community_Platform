@@ -59,6 +59,7 @@ public class ProfileFragment extends Fragment {
    // FirebaseDatabase firebaseDatabase;
    // DatabaseReference databaseReference;
    // StorageReference storageReference;
+
     String storagepath = "Users_Profile_image/";
     ProgressDialog pd;
     private static final int CAMERA_REQUEST = 100;

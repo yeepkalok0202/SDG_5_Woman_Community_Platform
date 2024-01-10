@@ -197,14 +197,20 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
                 .title("Current Location"); // You can set a title for the marker
 
         // Add the marker to the map
-        mGoogleMap.addMarker(markerOptions);
+        if(mGoogleMap!=null){
+            mGoogleMap.addMarker(markerOptions);
+
+        }
     }
 
     private void gotoLocation(double latitude, double longitude) {
         LatLng latLng = new LatLng(latitude,longitude);
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng,13);
-        mGoogleMap.moveCamera(cameraUpdate);
-        mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        if(mGoogleMap!=null){
+            mGoogleMap.moveCamera(cameraUpdate);
+            mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        }
+
     }
 
 
