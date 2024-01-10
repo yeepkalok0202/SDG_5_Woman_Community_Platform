@@ -123,21 +123,23 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         void setData(ChatMessage chatMessage, String receiverProfileImageUrl) {
             binding.textMessage.setText(chatMessage.message);
             binding.textDateTime.setText(chatMessage.dateTime);
-            fetchAndSetProfileImage(chatMessage.senderId);
-
-            FirebaseFirestore firebaseFirestore= FirebaseFirestore.getInstance();
-            DocumentReference documentReference=firebaseFirestore.collection("users").document(chatMessage.senderId);
-            documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                @Override
-                public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    if(documentSnapshot.exists()){
-                        User user=documentSnapshot.toObject(User.class);
-                        if(user!=null){
-                            binding.usernameinchat.setText(user.getUsername());
+            if(chatMessage.senderId!=null) {
+                fetchAndSetProfileImage(chatMessage.senderId);
+                FirebaseFirestore firebaseFirestore= FirebaseFirestore.getInstance();
+                DocumentReference documentReference=firebaseFirestore.collection("users").document(chatMessage.senderId);
+                documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if(documentSnapshot.exists()){
+                            User user=documentSnapshot.toObject(User.class);
+                            if(user!=null){
+                                binding.usernameinchat.setText(user.getUsername());
+                            }
                         }
                     }
-                }
-            });
+                });
+            }
+
 
         }
         private void fetchAndSetProfileImage(String userId) {

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +13,7 @@ import com.example.wia2007mad.R;
 
 public class CounsellingService extends AppCompatActivity {
 
-    ImageButton btnBackFromCounselling;
+    ImageView btnBackFromCounselling;
     Button btnPatient;
 
     @Override

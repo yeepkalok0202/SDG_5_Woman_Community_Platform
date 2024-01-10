@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -61,7 +62,7 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
     GoogleMap mGoogleMap;
     FloatingActionButton fab;
     private FusedLocationProviderClient mLocationClient;
-    ImageButton BtnBackEmergency;
+    ImageView BtnBackEmergency;
     double currentLat = 0, currentLong = 0;
     Spinner SPCategory;
     Button BtnFind;
