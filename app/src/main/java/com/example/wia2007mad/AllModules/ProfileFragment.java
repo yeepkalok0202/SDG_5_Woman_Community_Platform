@@ -84,6 +84,8 @@ public class ProfileFragment extends Fragment {
     FirebaseDatabase firebaseDatabase;
     StorageReference storageReference;
     DatabaseReference databaseReference;
+    private final String defaultImageUrl = "https://www.computerhope.com/jargon/g/guest-user.png";
+
 
     @Nullable
     @Override
@@ -100,7 +102,6 @@ public class ProfileFragment extends Fragment {
         //get database documents
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
-        assert firebaseUser != null;
         String uid=firebaseUser.getUid();
         firebaseFirestore=FirebaseFirestore.getInstance();
         userreference=firebaseFirestore.collection("users").document(uid);
@@ -110,12 +111,9 @@ public class ProfileFragment extends Fragment {
                 if(documentSnapshot.exists()){
                     User user=documentSnapshot.toObject(User.class);
                     if(user!=null){
-                        String profileusername=binding.profileusername.getText().toString()+" "+user.getUsername();
-                        binding.profileusername.setText(profileusername);
-                        String profileemail=binding.profileemail.getText().toString()+" "+user.getEmail();
-                        binding.profileemail.setText(profileemail);
-                        String profilephonenumber=binding.profilephonenumber.getText().toString()+" "+user.getPhone_number();
-                        binding.profilephonenumber.setText(profilephonenumber);
+                        binding.profileusername.setText(user.getUsername());
+                        binding.profileemail.setText(user.getEmail());
+                        binding.profilephonenumber.setText(user.getPhone_number());
                         binding.role.setText(user.getRole().toUpperCase());
                     }
                 }
@@ -133,6 +131,8 @@ public class ProfileFragment extends Fragment {
         cameraPermission = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
         //4th section profile pic change
+        // Default image URL
+
         firebaseDatabase = FirebaseDatabase.getInstance("https://authenticationmodule-bebd2-default-rtdb.asia-southeast1.firebasedatabase.app/");
         storageReference = FirebaseStorage.getInstance().getReference();
         databaseReference = firebaseDatabase.getReference("users");
@@ -141,23 +141,38 @@ public class ProfileFragment extends Fragment {
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-
-                    String image = dataSnapshot1.getValue(String.class);
-                    try {
-                        Glide.with(getContext())
-                                .load(image)
-                                .into(binding.profilepicholder);
-                    } catch (Exception e) {
+                if (!dataSnapshot.exists()) {
+                    // If no data exists for this user, set the default image in the database
+                    databaseReference.child(firebaseUser.getUid()).child("image").setValue(defaultImageUrl).addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            // Load the default image using Glide
+                            Glide.with(getContext())
+                                    .load(defaultImageUrl)
+                                    .into(binding.profilepicholder);
+                        } else {
+                            // Handle failure
+                        }
+                    });
+                } else {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        String image = dataSnapshot1.getValue(String.class);
+                        try {
+                            Glide.with(getContext())
+                                    .load(image)
+                                    .into(binding.profilepicholder);
+                        } catch (Exception e) {
+                            // Handle exception
+                        }
                     }
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                // Handle cancelled event
             }
         });
+
 
         //set let user change
         binding.profilepicholder.setOnClickListener(new View.OnClickListener() {
@@ -168,6 +183,7 @@ public class ProfileFragment extends Fragment {
                 showImagePicDialog();
             }
         });
+
         return binding.getRoot();
     }
 
@@ -452,7 +468,6 @@ public class ProfileFragment extends Fragment {
                     // updating our image url into the realtime database
                     HashMap<String, Object> userprofilepicurl = new HashMap<>();
                     userprofilepicurl.put(profileOrCoverPhoto, downloadUri.toString());
-                    System.out.println(downloadUri.toString());
                     databaseReference.child(firebaseUser.getUid()).updateChildren(userprofilepicurl).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
