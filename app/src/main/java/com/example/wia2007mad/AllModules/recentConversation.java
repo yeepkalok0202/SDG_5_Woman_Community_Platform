@@ -40,7 +40,11 @@ public class recentConversation extends AppCompatActivity implements ConversionL
         FirebaseApp.initializeApp(this);
         binding = ActivityRecentConversationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         preferenceManager = new PreferenceManager(getApplicationContext());
+        if(preferenceManager.getString(Constants.KEY_ROLE).equals("counsellor")){
+            binding.fabNewChat.setVisibility(View.GONE);
+        }
         init();
         getToken();
         setListeners();
@@ -149,7 +153,7 @@ public class recentConversation extends AppCompatActivity implements ConversionL
                         }
                     })
                     .addOnFailureListener(e -> {
-                        showToast("Error retrieving user: " + e.getMessage());
+                        showToast("Error retrieving info: " + e.getMessage());
                     });
         } else {
             showToast("User email not found");

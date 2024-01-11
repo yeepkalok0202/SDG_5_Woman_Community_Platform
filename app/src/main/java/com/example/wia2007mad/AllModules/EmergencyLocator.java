@@ -3,6 +3,7 @@ package com.example.wia2007mad.AllModules;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -11,10 +12,10 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -67,6 +68,7 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
     Spinner SPCategory;
     Button BtnFind;
     SupportMapFragment supportMapFragment;
+    private ProgressDialog progressDialog;
 
     private int GPS_REQUEST_CODE = 9001;
 
@@ -81,14 +83,20 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
         BtnFind = findViewById(R.id.BtnFind);
 
         //"Clinic","Emergency","24 Hours Clinic","First Aid"
-        String[] placeCategory = {"Police", "Hospital","Drugstore","Doctor","Dentist","Bank","light_rail_station","mosque","pharmacy","physiotherapist","train_station"};
-        String[] showingplaceCategory={"Police", "Hospital","Medicine Store","Doctor","Dentist","Bank","LRT","Mosque","Pharmacy","Physiotherapist","Train Station"};
+        String[] placeCategory = {"Police", "Hospital","Drugstore","Doctor","Dentist","Bank","light_rail_station","pharmacy","physiotherapist","train_station"};
+        String[] showingplaceCategory={"Police", "Hospital","Medicine Store","Doctor","Dentist","Bank","LRT","Pharmacy","Physiotherapist","Train Station"};
         SPCategory.setAdapter(new ArrayAdapter<>(EmergencyLocator.this,
                 android.R.layout.simple_spinner_dropdown_item, showingplaceCategory));
 
+
         checkMyPermission();
 
-        initMap();
+//        progressDialog = new ProgressDialog(this);
+//        progressDialog.setMessage("Loading Map...");
+//        progressDialog.setCancelable(true);
+//        progressDialog.show();
+
+        //initMap();
 
         mLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -134,11 +142,15 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
 
 
     private void initMap() {
-        if(isPermissionGranted){
-            if(isGPSenable()) {
-                supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_view);
-                supportMapFragment.getMapAsync(this);
-            }
+//        if(isPermissionGranted){
+//            if(isGPSenable()) {
+//                supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_view);
+//                supportMapFragment.getMapAsync(this);
+//            }
+//        }
+        supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_view);
+        if (supportMapFragment != null) {
+            supportMapFragment.getMapAsync(this);
         }
     }
 
@@ -169,23 +181,30 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
             return;
         }
 
-        mLocationClient.getLastLocation().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                Location location = task.getResult();
-                if (location != null) {
-                    currentLat = location.getLatitude(); // Update currentLat with latitude
-                    currentLong = location.getLongitude(); // Update currentLong with longitude
-                    gotoLocation(location.getLatitude(), location.getLongitude());
-                    addMarkerToCurrentLocation(location.getLatitude(),location.getLongitude());
+
+
+        if(mGoogleMap != null) {
+            mLocationClient.getLastLocation().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Location location = task.getResult();
+                    if (location != null) {
+                        currentLat = location.getLatitude(); // Update currentLat with latitude
+                        currentLong = location.getLongitude(); // Update currentLong with longitude
+                        gotoLocation(location.getLatitude(), location.getLongitude());
+                        addMarkerToCurrentLocation(location.getLatitude(), location.getLongitude());
+                    } else {
+                        // Handle the case when location is null
+                        Toast.makeText(this, "Location not available", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
-                    // Handle the case when location is null
-                    Toast.makeText(this, "Location not available", Toast.LENGTH_SHORT).show();
+                    // Handle the case when the task is not successful
+                    Toast.makeText(this, "Failed to get location", Toast.LENGTH_SHORT).show();
                 }
-            } else {
-                // Handle the case when the task is not successful
-                Toast.makeText(this, "Failed to get location", Toast.LENGTH_SHORT).show();
-            }
-        });
+            });
+        } else {
+            // Handle the case when mGoogleMap is null (map not ready yet)
+            Toast.makeText(this, "Map is not ready yet", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void addMarkerToCurrentLocation(double latitude, double longitude) {
@@ -197,20 +216,14 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
                 .title("Current Location"); // You can set a title for the marker
 
         // Add the marker to the map
-        if(mGoogleMap!=null){
-            mGoogleMap.addMarker(markerOptions);
-
-        }
+        mGoogleMap.addMarker(markerOptions);
     }
 
     private void gotoLocation(double latitude, double longitude) {
         LatLng latLng = new LatLng(latitude,longitude);
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng,13);
-        if(mGoogleMap!=null){
-            mGoogleMap.moveCamera(cameraUpdate);
-            mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        }
-
+        mGoogleMap.moveCamera(cameraUpdate);
+        mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
     }
 
 
@@ -221,6 +234,10 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
                 Toast.makeText(EmergencyLocator.this, "Permission Granted", Toast.LENGTH_SHORT).show();
                 isPermissionGranted = true;
+
+                if (isGPSenable()) {
+                    initMap();
+                }
             }
 
             @Override
@@ -244,7 +261,13 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
     @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
+        Log.d("MapDebug", "onMapReady called");
+        Toast.makeText(this, "Preparing map", Toast.LENGTH_SHORT).show();
         mGoogleMap = googleMap;
+
+//        if(progressDialog.isShowing()) {
+//            progressDialog.dismiss();
+//        }
     }
 
 
@@ -272,8 +295,9 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
 
             boolean providerEnable = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
-            if(providerEnable){
+            if(providerEnable && isPermissionGranted){
                 Toast.makeText(this,"GPS is enabled", Toast.LENGTH_SHORT).show();
+                initMap();
             }else{
                 Toast.makeText(this, "GPS is not enabled", Toast.LENGTH_SHORT).show();
             }

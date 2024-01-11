@@ -32,7 +32,12 @@ public class JobPortal extends AppCompatActivity {
         Glide.with(this)
                 .load(article3)
                 .into(binding.skillimage3);
-
+        binding.Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         binding.MoreSkill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +50,7 @@ public class JobPortal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(JobPortal.this, Skill.class);
-                intent.putExtra("searchQuery","Dan");
+                intent.putExtra("searchQuery","Tell Me About Yourself");
                 startActivity(intent);
 
             }
@@ -54,7 +59,7 @@ public class JobPortal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(JobPortal.this, Skill.class);
-                intent.putExtra("searchQuery","Self");
+                intent.putExtra("searchQuery","Sample answer");
                 startActivity(intent);
 
             }
@@ -63,7 +68,7 @@ public class JobPortal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(JobPortal.this, Skill.class);
-                intent.putExtra("searchQuery","Linda");
+                intent.putExtra("searchQuery","How to Ace an Interview");
                 startActivity(intent);
 
             }

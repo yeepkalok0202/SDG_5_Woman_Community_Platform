@@ -7,15 +7,25 @@
     android:orientation="vertical"
     tools:context=".AllModules.JobPortal">
 
+    <ImageButton
+        android:id="@+id/Back"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="32dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/homeicon"
+        android:layout_toRightOf="@id/TVTitleJobPortal"/>
     <TextView
         android:id="@+id/TVTitleJobPortal"
-        android:layout_width="305dp"
+        android:layout_width="285dp"
         android:layout_height="108dp"
         android:layout_gravity="center"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="45dp"
-        android:text="Seeking for you career?"
-        android:fontFamily="@font/interextrabold"
+        android:layout_marginTop="25dp"
+        android:text="Seeking for your career?"
+        android:fontFamily="@font/semiboldoutfit"
         android:textSize="40dp"
         android:textColor="@color/black"/>
 

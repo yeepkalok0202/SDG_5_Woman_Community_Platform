@@ -276,15 +276,15 @@ Through this approach, we navigate the challenge without delving into mathematic
     <!-- workshop mock data-->
     <string name="skilltopic1">Tell Me About Yourself</string>
     <string name="skillauthor1">Dan Lok</string>
-    <string name="skillimagelink1">https://i.ytimg.com/vi/5v-wyR5emRw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG\u0026rs=AOn4CLAiMgIICKOrptY4J0vb-qRDVxScEw</string>
+    <string name="skillimagelink1">https://i.ytimg.com/vi/5v-wyR5emRw/maxresdefault.jpg</string>
 
     <string name="skilltopic2">Sample answer- What are your weakness?</string>
     <string name="skillauthor2">Linda Raynier</string>
-    <string name="skillimagelink2">https://i.ytimg.com/vi/2mc2B8NZhvY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG\u0026rs=AOn4CLAYEcStzsSwICWnDaxBsz6vXm2hZg</string>
+    <string name="skillimagelink2">https://media.licdn.com/dms/image/C5112AQF-geK4lvVFRg/article-cover_image-shrink_600_2000/0/1520160338519?e=2147483647&amp;v=beta&amp;t=AT6vvWUsyF40qUhsQ_xTFkItQ8mBQSc6HqgWyF9lGRU</string>
 
     <string name="skilltopic3">How to Ace an Interview</string>
     <string name="skillauthor3">Self Made Millenial</string>
-    <string name="skillimagelink3">https://i.ytimg.com/vi/fYHR0KgnGHU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG\u0026rs=AOn4CLBXIlDKKTsC2qk9I-heKxodkuSOhA</string>
+    <string name="skillimagelink3">https://i.ytimg.com/vi/fYHR0KgnGHU/maxresdefault.jpg</string>
     <string name="lorem_ipsum">gg
     </string>
 </resources>
