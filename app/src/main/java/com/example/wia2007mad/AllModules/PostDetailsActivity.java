@@ -88,6 +88,20 @@ public class PostDetailsActivity extends AppCompatActivity {
         imagep = findViewById(R.id.commentimge);
         profile = findViewById(R.id.profilelayout);
         progressDialog = new ProgressDialog(this);
+        FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+        myname=firebaseAuth.getUid();
+        DocumentReference documentReference=FirebaseFirestore.getInstance().collection("users").document(myname);
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    User user=documentSnapshot.toObject(User.class);
+                    if(user!=null){
+                        myname=user.getUsername();
+                    }
+                }
+            }
+        });
         loadPostInfo();
         loadUserInfo();
         loadComments();
@@ -146,20 +160,7 @@ public class PostDetailsActivity extends AppCompatActivity {
         hashMap.put("uid", myuid);
         hashMap.put("uemail", myemail);
         hashMap.put("udp", mydp);
-        FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
-        myname=firebaseAuth.getUid();
-        DocumentReference documentReference=FirebaseFirestore.getInstance().collection("users").document(myname);
-        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                if(documentSnapshot.exists()){
-                    User user=documentSnapshot.toObject(User.class);
-                    if(user!=null){
-                        myname=user.getUsername();
-                    }
-                }
-            }
-        });
+
 
         hashMap.put("uname", myname);
         datarf.setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -222,22 +223,6 @@ public class PostDetailsActivity extends AppCompatActivity {
 
 
 
-        firebaseFirestore=FirebaseFirestore.getInstance();
-        DocumentReference documentReference=firebaseFirestore.collection("users").document(myuid);
-
-        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                if(documentSnapshot.exists()){
-                    User user=documentSnapshot.toObject(User.class);
-                    System.out.println(user.getUsername());
-                    if(user!=null){
-                        name.setText(user.getUsername());
-                    }
-                }
-            }
-        });
 
 
     }
@@ -283,8 +268,8 @@ public class PostDetailsActivity extends AppCompatActivity {
                     title.setText(ptitle);
                     description.setText(descriptions);
                     time.setText(timedate);
-                    Glide.with(PostDetailsActivity.this).load(uimage).into(image);
-                    Glide.with(PostDetailsActivity.this).load(hisdp).into(picture);
+                    Glide.with(getApplicationContext()).load(uimage).into(image);
+                    Glide.with(getApplicationContext()).load(hisdp).into(picture);
 
                 }
             }
@@ -294,6 +279,7 @@ public class PostDetailsActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 
