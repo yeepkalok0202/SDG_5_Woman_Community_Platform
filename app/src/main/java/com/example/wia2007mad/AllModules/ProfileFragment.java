@@ -144,7 +144,6 @@ public class ProfileFragment extends Fragment {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
 
                     String image = dataSnapshot1.getValue(String.class);
-                    System.out.println("wow lets try thIS "+image);
                     try {
                         Glide.with(getContext())
                                 .load(image)

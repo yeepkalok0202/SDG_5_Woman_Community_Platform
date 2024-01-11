@@ -315,24 +315,12 @@ public class PublishPostFragment extends Fragment {
         String timestamptemp = null;
 
         Locale locale = Locale.getDefault();
-        String countryCode = locale.getCountry();
-        String finalcountryCode="";
-
-        Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
-        try {
-            List<Address> addresses = geocoder.getFromLocationName(countryCode, 1);
-            if (addresses != null && !addresses.isEmpty()) {
-                finalcountryCode=addresses.get(0).getCountryName();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             instant = Instant.now();
             dateTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
             formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-            timestamptemp = dateTime.format(formatter)+" "+finalcountryCode;
+            timestamptemp = dateTime.format(formatter);
         }
         final String timestamp=timestamptemp;
         String filepathname = "Posts/" + "post" + timestamp;
@@ -361,6 +349,8 @@ public class PublishPostFragment extends Fragment {
                     hashMap.put("description", description);
                     hashMap.put("uimage", downloadUri);
                     hashMap.put("ptime", timestamp);
+                    hashMap.put("plike", "0"); //number of like
+                    hashMap.put("pcomment", "0"); // number of comments
 
                     // set the data into firebase and then empty the title ,description and image data
                     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Posts");

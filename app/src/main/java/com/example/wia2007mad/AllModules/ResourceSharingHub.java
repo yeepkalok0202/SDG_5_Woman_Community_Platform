@@ -42,7 +42,10 @@ public class ResourceSharingHub extends AppCompatActivity {
         navController=host.getNavController();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.bottomNavigationViewForResourceSharingHub,navController);
-        actionBar.setTitle("");
+        if(actionBar!=null){
+            actionBar.setTitle("");
+
+        }
 
 
     }

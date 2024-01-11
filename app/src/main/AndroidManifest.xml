@@ -38,7 +38,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".AllModules.RoleChoosing">
-
+        </activity>
+        <activity android:name=".AllModules.PostDetailsActivity"
+            android:parentActivityName=".AllModules.ResourceSharingHub">
         </activity>
         <activity android:name=".AllModules.GroupChatFirstPage"
             android:parentActivityName=".AllModules.HealthHome">

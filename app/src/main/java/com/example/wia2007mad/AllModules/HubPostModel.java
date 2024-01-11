@@ -14,6 +14,25 @@ public class HubPostModel {
     String uname;
     String pid;
 
+
+
+    String plike;
+    String pcomment;
+
+    public HubPostModel(String description, String ptime, String title, String udp, String uemail, String uid, String uimage, String uname, String pid, String plike, String pcomment) {
+        this.description = description;
+        this.ptime = ptime;
+        this.title = title;
+        this.udp = udp;
+        this.uemail = uemail;
+        this.uid = uid;
+        this.uimage = uimage;
+        this.uname = uname;
+        this.pid = pid;
+        this.plike = plike;
+        this.pcomment = pcomment;
+    }
+
     public HubPostModel() {
     }
 
@@ -23,19 +42,21 @@ public class HubPostModel {
             return o2.getPtime().compareTo(o1.getPtime());
         }
     };
-    public HubPostModel(String description, String pid, String ptime, String title, String udp, String uemail, String uid, String uimage, String uname) {
-        this.description = description;
-        this.pid = pid;
-        this.ptime = ptime;
-        this.title = title;
-        this.udp = udp;
-        this.uemail = uemail;
-        this.uid = uid;
-        this.uimage = uimage;
-        this.uname = uname;
+    public String getPlike() {
+        return plike;
     }
 
+    public void setPlike(String plike) {
+        this.plike = plike;
+    }
 
+    public String getPcomment() {
+        return pcomment;
+    }
+
+    public void setPcomment(String pcomment) {
+        this.pcomment = pcomment;
+    }
     public String getDescription() {
         return description;
     }
