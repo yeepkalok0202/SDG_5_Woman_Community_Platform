@@ -21,6 +21,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.wia2007mad.AllModules.utilities.Constants;
+import com.example.wia2007mad.AllModules.utilities.PreferenceManager;
 import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.FragmentSettingBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +33,7 @@ import java.time.Duration;
 public class SettingFragment extends Fragment {
     private FragmentSettingBinding binding;
     private boolean quit;
+    private PreferenceManager preferenceManager;
 
     @Nullable
     @Override
@@ -77,12 +80,15 @@ public class SettingFragment extends Fragment {
                         @Override
                         public void run() {
                             // Navigate back to the LoginActivity (Main Activity)
+                            FirebaseAuth.getInstance().signOut();
                             Intent intent = new Intent(getActivity(), RoleChoosing.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
-
                             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("AppPrefs", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.remove(Constants.KEY_EMAIL);
+                            editor.remove(Constants.KEY_USER_ID);
+                            editor.remove(Constants.KEY_ROLE);
                             editor.putBoolean("isLoggedOut", true);
                             editor.apply();
                             // Finish the current activity

@@ -94,8 +94,8 @@ public class Register extends AppCompatActivity {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     assert user != null;
                                     addUserDetailsToFirestore(user,phonenumber,username);
-                                    Intent intent = new Intent(getApplicationContext(),Login.class);
-                                    startActivity(intent);
+                                    onBackPressed();
+                                    mAuth=null;
                                     finish();
 
                                 } else {

@@ -6,29 +6,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AllModules.PostDetailsActivity">
-
-
-    <androidx.core.widget.NestedScrollView
+    <LinearLayout
+        android:id="@+id/heading"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/commentsa">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+        <ImageView
+            android:id="@+id/backtodisplaysection"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/arrow_left"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="22dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/interbold"
+            android:text="Post Details"
+            android:textSize="28dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="75dp"/>
+
+
+    </LinearLayout>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heading"/>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollview"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/commentsa"
+        android:layout_below="@+id/heading">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
         <com.google.android.material.card.MaterialCardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="3dp"
-    app:cardElevation="8dp"
-    app:cardUseCompatPadding="true"
-    app:contentPadding="10dp"
-    android:layout_margin="15dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="10dp"
+            android:layout_margin="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -186,7 +215,8 @@
                 android:id="@+id/commentimge"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/defaultprofilepicture" />
+                android:src="@drawable/defaultprofilepicture"
+                android:layout_marginRight="5dp"/>
 
             <EditText
                 android:id="@+id/typecommet"
@@ -205,9 +235,12 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:layout_alignParentRight="true"
-                android:background="@color/white"
+                android:background="@null"
                 android:src="@drawable/send_message"
-                android:scaleType="fitCenter"/>
+                android:scaleType="fitCenter"
+                android:backgroundTint="@null"
+                android:layout_marginTop="5dp"
+                />
 
         </LinearLayout>
         <com.google.android.material.divider.MaterialDivider

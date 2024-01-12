@@ -31,10 +31,12 @@ public class ResourceSharingHub extends AppCompatActivity {
         Toolbar toolbar=binding.ToolbarResource;
         setSupportActionBar(toolbar);
         ActionBar actionBar=getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true); // for the 'up' button
-            // further customization goes here
-        }
+        binding.backtomainpageelearningbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
 
         appBarConfiguration= new AppBarConfiguration.Builder(R.id.displayPostFragment,R.id.publishPostFragment).build();
@@ -44,7 +46,6 @@ public class ResourceSharingHub extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.bottomNavigationViewForResourceSharingHub,navController);
         if(actionBar!=null){
             actionBar.setTitle("");
-
         }
 
 

@@ -22,17 +22,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:elevation="10dp">
+        <ImageView
+            android:id="@+id/backtomainpageelearningbutton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/arrow_left"/>
 
         <TextView
             android:id="@+id/PageName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
             android:fontFamily="@font/semiboldoutfit"
             android:paddingEnd="12dp"
             android:text="Resource Sharing Hub"
             android:textColor="@color/black"
-            android:textSize="30dp"
+            android:textSize="28dp"
             android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>

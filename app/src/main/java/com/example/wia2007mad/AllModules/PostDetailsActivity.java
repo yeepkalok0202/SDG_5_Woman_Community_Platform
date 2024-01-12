@@ -52,7 +52,7 @@ public class PostDetailsActivity extends AppCompatActivity {
 
 
     String ptime, myuid, myname, myemail, mydp, uimage, postId, plike, hisdp, hisname; //dp means profile picture
-    ImageView picture, image;
+    ImageView picture, image, backtodisplaysection;
     TextView name, time, title, description;
     LinearLayout profile;
     EditText comment;
@@ -88,6 +88,7 @@ public class PostDetailsActivity extends AppCompatActivity {
         imagep = findViewById(R.id.commentimge);
         profile = findViewById(R.id.profilelayout);
         progressDialog = new ProgressDialog(this);
+        backtodisplaysection=findViewById(R.id.backtodisplaysection);
         FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
         myname=firebaseAuth.getUid();
         DocumentReference documentReference=FirebaseFirestore.getInstance().collection("users").document(myname);
@@ -109,6 +110,14 @@ public class PostDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 postComment();
+            }
+        });
+
+        backtodisplaysection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+                finish();
             }
         });
 
@@ -189,8 +198,8 @@ public class PostDetailsActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (count) {
                     String comments = "" + dataSnapshot.child("pcomment").getValue();
-                    //int newcomment = Integer.parseInt(comments) + 1;
-                   // reference.child("pcomment").setValue("" + newcomment);
+                    int newcomment = Integer.parseInt(comments) + 1;
+                    reference.child("pcomment").setValue("" + newcomment);
                     count = false;
                 }
             }
@@ -211,7 +220,7 @@ public class PostDetailsActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     mydp = dataSnapshot1.getValue(String.class);
-                    Glide.with(PostDetailsActivity.this).load(mydp).into(imagep);
+                    Glide.with(getApplicationContext()).load(mydp).into(imagep);
                 }
             }
 
@@ -243,13 +252,8 @@ public class PostDetailsActivity extends AppCompatActivity {
                     hisname = dataSnapshot1.child("uname").getValue().toString();
                     ptime = dataSnapshot1.child("ptime").getValue().toString();
                     plike = dataSnapshot1.child("plike").getValue().toString();
-                    String commentcount="";
-                    try{
-                        commentcount = dataSnapshot1.child("pcomments").getValue().toString();
-                    }
-                    catch(Exception e){
-                        e.printStackTrace();
-                    }
+
+
                     Instant instant = null;
                     LocalDateTime dateTime = null;
                     DateTimeFormatter formatter = null;

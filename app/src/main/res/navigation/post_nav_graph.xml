@@ -11,7 +11,8 @@
         tools:layout="@layout/fragment_display_post">
         <action
             android:id="@+id/action_displayPostFragment_to_publishPostFragment"
-            app:destination="@id/publishPostFragment" />
+            app:destination="@id/publishPostFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/publishPostFragment"

@@ -102,59 +102,67 @@ public class Login extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                preferenceManager.putString(Constants.KEY_EMAIL, email);
-                                database.collection(Constants.KEY_COLLECTION_USERS)
-                                        .whereEqualTo(Constants.KEY_EMAIL, email)
-                                        .get()
-                                        .addOnCompleteListener(task1 -> {
-                                            if (task1.isSuccessful() && task1.getResult().getDocuments().size() > 0) {
-                                                DocumentSnapshot documentSnapshot = task1.getResult().getDocuments().get(0);
-                                                preferenceManager.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
-                                                preferenceManager.putString(Constants.KEY_NAME, documentSnapshot.getString(Constants.KEY_NAME));
-                                                preferenceManager.putString(Constants.KEY_ROLE, documentSnapshot.getString(Constants.KEY_ROLE));
+                                if(task.isSuccessful()){
+                                    preferenceManager.putString(Constants.KEY_EMAIL, email);
+                                    database.collection(Constants.KEY_COLLECTION_USERS)
+                                            .whereEqualTo(Constants.KEY_EMAIL, email)
+                                            .get()
+                                            .addOnCompleteListener(task1 -> {
+                                                if (task1.isSuccessful() && task1.getResult().getDocuments().size() > 0) {
+                                                    DocumentSnapshot documentSnapshot = task1.getResult().getDocuments().get(0);
+                                                    preferenceManager.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
+                                                    preferenceManager.putString(Constants.KEY_NAME, documentSnapshot.getString(Constants.KEY_NAME));
+                                                    preferenceManager.putString(Constants.KEY_ROLE, documentSnapshot.getString(Constants.KEY_ROLE));
 
-                                                Query query = databaseReference.child("image");
+                                                    Query query = databaseReference.child("image");
 
-                                                query.addValueEventListener(new ValueEventListener() {
-                                                    @Override
-                                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                        if (dataSnapshot.exists()) {
-                                                            String image = dataSnapshot.getValue(String.class);
-                                                            System.out.println("Image link retrieved: " + image);
+                                                    query.addValueEventListener(new ValueEventListener() {
+                                                        @Override
+                                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                            if (dataSnapshot.exists()) {
+                                                                String image = dataSnapshot.getValue(String.class);
+                                                                System.out.println("Image link retrieved: " + image);
 
-                                                            try {
-                                                                preferenceManager.putString(Constants.KEY_IMAGE, image);
-                                                            } catch (Exception e) {
-                                                                // Handle any exceptions here
+                                                                try {
+                                                                    preferenceManager.putString(Constants.KEY_IMAGE, image);
+                                                                } catch (Exception e) {
+                                                                    // Handle any exceptions here
+                                                                }
+                                                            } else {
+                                                                // Handle the case where the data doesn't exist
                                                             }
-                                                        } else {
-                                                            // Handle the case where the data doesn't exist
                                                         }
-                                                    }
 
-                                                    @Override
-                                                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                                                        // Handle errors here
-                                                    }
-                                                });
+                                                        @Override
+                                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                                            // Handle errors here
+                                                        }
+                                                    });
 
-                                                Toast.makeText(getApplicationContext(), "Login Successful.",
-                                                        Toast.LENGTH_SHORT).show();
-                                                SharedPreferences preferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
-                                                SharedPreferences.Editor editor = preferences.edit();
-                                                editor.putBoolean("isLoggedOut", false);
-                                                editor.apply();
-                                                Intent intent = new Intent(getApplicationContext(), MainHomePage.class);
-                                                startActivity(intent);
-                                                finish();
+                                                    Toast.makeText(getApplicationContext(), "Login Successful.",
+                                                            Toast.LENGTH_SHORT).show();
+                                                    SharedPreferences preferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+                                                    SharedPreferences.Editor editor = preferences.edit();
+                                                    editor.putBoolean("isLoggedOut", false);
+                                                    editor.apply();
+                                                    Intent intent = new Intent(getApplicationContext(), MainHomePage.class);
+                                                    startActivity(intent);
+                                                    finish();
 
-                                            } else {
-                                                // If sign in fails, display a message to the user.
-                                                Toast.makeText(Login.this, "Wrong credentials.",
-                                                        Toast.LENGTH_SHORT).show();
+                                                } else {
+                                                    // If sign in fails, display a message to the user.
+                                                    Toast.makeText(Login.this, "Wrong credentials.",
+                                                            Toast.LENGTH_SHORT).show();
 
-                                            }
-                                        });
+                                                }
+                                            });
+                                }
+                                else{
+                                    // Authentication failed, handle the error here
+                                    Toast.makeText(Login.this, "Wrong password ",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+
                             }
 
             });

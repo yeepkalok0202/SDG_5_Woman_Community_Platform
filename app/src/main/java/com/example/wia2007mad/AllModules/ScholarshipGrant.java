@@ -42,7 +42,8 @@ public class ScholarshipGrant extends AppCompatActivity implements ScholarshipRe
         setSupportActionBar(toolbar);
         ActionBar actionBar=getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true); // for the 'up' button
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("");// for the 'up' button
             // further customization goes here
         }
 
