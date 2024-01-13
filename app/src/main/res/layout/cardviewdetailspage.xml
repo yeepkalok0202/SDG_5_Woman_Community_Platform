@@ -1,37 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/arrowbackpressed"
+        android:layout_width="45dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginStart="11dp"
+        android:background="@null"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:scaleType="centerCrop"
+        android:src="@drawable/arrow_left"/>
+
+    <TextView
+        android:id="@+id/carddetailscourse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Course"
+        android:fontFamily="@font/semiboldoutfit"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toRightOf="@id/arrowbackpressed"
+        android:paddingEnd="12dp"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/carddetailscourse"
         >
-        
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            
-            <TextView
-                android:id="@+id/carddetailscourse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Course"
-                android:fontFamily="@font/semiboldoutfit"
-                android:layout_marginTop="50dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:paddingEnd="12dp"
-                android:textColor="@color/black"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
-            
+
+
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/carddetailsimage"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:src="@drawable/kunkun"/>
 
             <TextView
@@ -62,4 +77,4 @@
     </ScrollView>
 
 
-</LinearLayout>
+</RelativeLayout>

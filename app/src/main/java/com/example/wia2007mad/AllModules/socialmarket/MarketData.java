@@ -4,6 +4,6 @@ import java.io.Serializable;
 
 public class MarketData implements Serializable {
 
-    public String name,course,marketDesc, imageUrl, url;
+    public String name,course,marketDesc, imageUrl, url, videoUrl;
 
 }

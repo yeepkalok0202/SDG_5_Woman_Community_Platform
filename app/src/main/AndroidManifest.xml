@@ -164,6 +164,14 @@
             android:parentActivityName=".AllModules.socialmarket.Home">
         </activity>
 
+        <activity android:name=".AllModules.socialmarket.TodoList"
+            android:parentActivityName=".AllModules.socialmarket.Business">
+        </activity>
+
+        <activity android:name=".AllModules.socialmarket.MarketingDetails"
+            android:parentActivityName=".AllModules.socialmarket.Marketing">
+        </activity>
+
         <activity android:name=".AllModules.JobPortal"
             android:parentActivityName=".AllModules.MainHomePage">
         </activity>

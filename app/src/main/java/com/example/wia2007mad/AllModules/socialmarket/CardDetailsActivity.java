@@ -1,6 +1,7 @@
 package com.example.wia2007mad.AllModules.socialmarket;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +26,14 @@ public class CardDetailsActivity extends AppCompatActivity {
         binding.carddetailscourse.setText(course);
         binding.carddetailsname.setText(name);
         binding.carddetailsdesc.setText(description);
+
+        //button from details to previous list page
+        binding.arrowbackpressed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         // Load image using Glide
         Glide.with(this)

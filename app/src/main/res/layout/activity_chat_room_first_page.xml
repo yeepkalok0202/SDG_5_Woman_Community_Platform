@@ -39,7 +39,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="55dp"
-        app:srcCompat="@drawable/big_modern_smartphone_with_speech_bubbles_two_cute_male_female_characters_sitting_signs_985641_481" />
+        app:srcCompat="@drawable/big_modern_smartphone" />
 
     <FrameLayout
         android:layout_width="match_parent"

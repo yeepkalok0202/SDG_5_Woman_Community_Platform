@@ -2,6 +2,7 @@ package com.example.wia2007mad.AllModules.socialmarket;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,6 +30,14 @@ public class SuccessDetailsActivity extends AppCompatActivity {
         binding.storiesdetailsname.setText(name);
         binding.storiesdetailstitle.setText(title);
         binding.storiesdetailsdesc.setText(desc);
+
+        //button from success details to list
+        binding.arrowbacksuccessstory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         // Load image using Glide
         Glide.with(this)

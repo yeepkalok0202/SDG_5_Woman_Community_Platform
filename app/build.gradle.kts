@@ -84,5 +84,8 @@ dependencies {
     implementation("com.intuit.ssp:ssp-android:1.0.6")
     //above is sdp ssp for scale independent resolutions
 
+    //for slide task
+    implementation ("it.xabaras.android:recyclerview-swipedecorator:1.4")
+
 
 }

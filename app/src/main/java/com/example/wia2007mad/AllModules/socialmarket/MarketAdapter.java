@@ -43,11 +43,12 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.MarketView
             @Override
             public void onClick(View view) {
                 MarketData marketData = marketDataList.get(position);
-                Intent intent = new Intent(view.getContext(), CardDetailsActivity.class);
+                Intent intent = new Intent(view.getContext(), MarketingDetails.class);
                 intent.putExtra("course", marketData.course);
                 intent.putExtra("name", marketData.name);
                 intent.putExtra("description", marketData.marketDesc);
                 intent.putExtra("imageUrl", marketData.imageUrl);
+                intent.putExtra("videoUrl", marketData.videoUrl);
                 view.getContext().startActivity(intent);
             }
         });

@@ -48,9 +48,70 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/businessrecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="455dp"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/businesssearchview"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="10dp"
+        android:layout_below="@id/businessrecyclerView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_margin="5dp"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/inter_semibold"
+                android:scaleType="centerCrop"
+                android:src="@drawable/track_progress_image"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/outfitbold"
+                    android:text="Track your progress here:"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"/>
+
+                <ImageView
+                    android:id="@+id/imagebuttontodonav"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/click_here"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
 </RelativeLayout>

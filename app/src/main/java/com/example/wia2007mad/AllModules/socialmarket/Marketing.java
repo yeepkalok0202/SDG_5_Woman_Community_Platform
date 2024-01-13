@@ -70,6 +70,8 @@ public class Marketing extends AppCompatActivity {
                             marketdata.course = document.getString("course");
                             marketdata.marketDesc = document.getString("market_desc");
                             marketdata.url = document.getString("url");
+                            //get video link
+                            marketdata.videoUrl = document.getString("videoUrl");
                             marketresourcelist.add(marketdata);
                         }
                         //adapter.setResources(marketresourcelist);

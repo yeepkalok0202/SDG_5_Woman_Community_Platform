@@ -3,8 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <FrameLayout
+        android:id="@+id/fullscreenmode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="100dp"/>
+
     <ImageButton
-        android:id="@+id/arrowbacksuccessstory"
+        android:id="@+id/arrowbackpressed"
         android:layout_width="45dp"
         android:layout_height="31dp"
         android:layout_marginTop="41dp"
@@ -16,26 +22,30 @@
         android:src="@drawable/arrow_left"/>
 
     <TextView
-        android:id="@+id/storiesdetailsname"
+        android:id="@+id/carddetailscourse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="Course"
         android:fontFamily="@font/semiboldoutfit"
         android:layout_marginTop="40dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="20dp"
-        android:layout_toRightOf="@id/arrowbacksuccessstory"
+        android:layout_toRightOf="@id/arrowbackpressed"
         android:paddingEnd="12dp"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"/>
 
-    <ScrollView
+    <WebView
+        android:id="@+id/marketvideo"
+        android:layout_below="@id/carddetailscourse"
+        android:layout_width="match_parent"
+        android:layout_height="250sp" />
 
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/arrowbacksuccessstory"
-        >
+        android:layout_below="@id/marketvideo">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,18 +53,12 @@
             android:orientation="vertical">
 
 
-            <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:id="@+id/storiesdetailsimage"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/kunkun"/>
 
             <TextView
-                android:id="@+id/storiesdetailstitle"
+                android:id="@+id/carddetailsname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Title"
+                android:text="Name"
                 android:fontFamily="@font/interregular"
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
@@ -64,7 +68,7 @@
                 android:textSize="20dp"/>
 
             <TextView
-                android:id="@+id/storiesdetailsdesc"
+                android:id="@+id/carddetailsdesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
