@@ -15,7 +15,9 @@ import com.example.wia2007mad.databinding.BusinessBinding;
 import com.example.wia2007mad.databinding.TodolistBinding;
 import com.example.wia2007mad.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -39,10 +41,14 @@ public class TodoList extends AppCompatActivity implements OnDialogCloseListener
     private ListenerRegistration listenerRegistration;
 
     private ImageButton btnback;
+    private FirebaseAuth firebaseAuth;
+    private DocumentReference documentReference;
 
     //private TodolistBinding binding;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        firebaseAuth= FirebaseAuth.getInstance();
+
         setContentView(R.layout.todolist);
 
         //binding= TodolistBinding.inflate(getLayoutInflater());
@@ -61,6 +67,8 @@ public class TodoList extends AppCompatActivity implements OnDialogCloseListener
         });
 
         db = FirebaseFirestore.getInstance();
+        documentReference=db.collection("users").document(firebaseAuth.getUid());
+
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -85,7 +93,7 @@ public class TodoList extends AppCompatActivity implements OnDialogCloseListener
     }
 
     private void showData(){
-        query = db.collection("task").orderBy("time", Query.Direction.DESCENDING);
+        query = documentReference.collection("task").orderBy("time", Query.Direction.DESCENDING);
         listenerRegistration = query.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {

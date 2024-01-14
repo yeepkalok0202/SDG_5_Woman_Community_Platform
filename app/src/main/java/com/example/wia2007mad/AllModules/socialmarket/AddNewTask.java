@@ -25,6 +25,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -44,11 +45,14 @@ public class AddNewTask extends BottomSheetDialogFragment {
     private String dueDate = "";
     private String id = "";
     private String dueDateUpdate = "";
+    private FirebaseAuth firebaseAuth;
+    private DocumentReference documentReference;
     public static AddNewTask newInstance(){
         return new AddNewTask();
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        firebaseAuth= FirebaseAuth.getInstance();
         return inflater.inflate(R.layout.add_new_task , container , false);
 
     }
@@ -60,8 +64,9 @@ public class AddNewTask extends BottomSheetDialogFragment {
         mTaskEdit = view.findViewById(R.id.task_edittext);
         mSaveBtn = view.findViewById(R.id.save_btn);
 
-        db = FirebaseFirestore.getInstance();
 
+        db = FirebaseFirestore.getInstance();
+        documentReference=db.collection("users").document(firebaseAuth.getUid());
         boolean isUpdate = false;
 
         final Bundle bundle = getArguments();
@@ -144,7 +149,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
             public void onClick(View v) {
                 String task = mTaskEdit.getText().toString();
                 if (finalIsUpdate){
-                    db.collection("task").document(id).update("task" , task , "due" , dueDate);
+                    documentReference.collection("task").document(id).update("task" , task , "due" , dueDate);
                     Toast.makeText(context, "Task Updated", Toast.LENGTH_SHORT).show();
 
                 }else {//first time
@@ -160,7 +165,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
                         //to order the task by time
                         taskMap.put("time", FieldValue.serverTimestamp());
 
-                        db.collection("task").add(taskMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                        documentReference.collection("task").add(taskMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                             @Override
                             public void onComplete(@NonNull Task<DocumentReference> task) {
                                 if (task.isSuccessful()) {

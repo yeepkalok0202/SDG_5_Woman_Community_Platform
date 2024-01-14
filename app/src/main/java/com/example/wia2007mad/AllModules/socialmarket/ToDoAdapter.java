@@ -13,6 +13,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wia2007mad.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
@@ -22,6 +24,8 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder>{
     private List<ToDoModel> todoList;
     private TodoList activity;
     private FirebaseFirestore db;
+    private FirebaseAuth firebaseAuth;
+    private DocumentReference documentReference;
 
     public ToDoAdapter(TodoList mainActivity , List<ToDoModel> todoList){
         this.todoList = todoList;
@@ -30,8 +34,11 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder>{
     @androidx.annotation.NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@androidx.annotation.NonNull ViewGroup parent, int viewType) {
+        firebaseAuth= FirebaseAuth.getInstance();
+
         View view = LayoutInflater.from(activity).inflate(R.layout.each_task , parent , false);
         db = FirebaseFirestore.getInstance();
+        documentReference=db.collection("users").document(firebaseAuth.getUid());
 
         return new MyViewHolder(view);
     }
@@ -39,7 +46,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder>{
     //delete task
     public void deleteTask(int position){
         ToDoModel toDoModel = todoList.get(position);
-        db.collection("task").document(toDoModel.TaskId).delete();
+        documentReference.collection("task").document(toDoModel.TaskId).delete();
         todoList.remove(position);
         notifyItemRemoved(position);
     }
@@ -74,9 +81,9 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder>{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    db.collection("task").document(toDoModel.TaskId).update("status" , 1);
+                    documentReference.collection("task").document(toDoModel.TaskId).update("status" , 1);
                 }else{
-                    db.collection("task").document(toDoModel.TaskId).update("status" , 0);
+                    documentReference.collection("task").document(toDoModel.TaskId).update("status" , 0);
                 }
             }
         });
