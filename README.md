@@ -34,9 +34,9 @@ To support women's career growth, HerJourney includes a job portal that:
 - Provides tips and tricks for acing job interviews.
 - Offers resources for resume building and professional development.
 
-### Social Market Module
+### Entrepreneurship Module
 HerJourney empowers women to pursue entrepreneurship through its Social Market module, which includes:
-- A platform for women to buy and sell products and services.
+- A platform for women to plan their business startup
 - Resources and guides on starting and managing a business.
 - Success stories and mentorship opportunities to inspire and support aspiring entrepreneurs.
 
